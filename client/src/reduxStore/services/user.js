@@ -21,7 +21,6 @@ export const api = createApi({
         {
           url: `api/users/email`,
           method: 'post',
-    
           body: credentials,
         }
       ),
