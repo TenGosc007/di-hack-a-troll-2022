@@ -9,3 +9,4 @@ export * from './Navbar';
 export * from './Input';
 export * from './Sidebar';
 export * from './Btn';
+export * from './Text';
