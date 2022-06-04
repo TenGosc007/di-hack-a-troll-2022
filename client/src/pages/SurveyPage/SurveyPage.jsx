@@ -36,6 +36,7 @@ export const SurveyPage = () => {
           {activeQuestion + 1}/ {questions.length}
         </p>
         <p>{questions[activeQuestion].content}</p>
+        {/* pytania tu wyzej */}
         <ul>
           {questions[activeQuestion].answers.map((answer, index) => (
             <Btn outline key={index} onClick={handleToogle(index)} className={styles.btn}>
