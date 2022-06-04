@@ -35,6 +35,7 @@ export const SurveyMailPage = () => {
           {errorMsg && <p>{errorMsg}</p>}
         </div>
       </div>
+      <div className={styles.container__footer}>{t`survey3.footer`}</div>
     </Layout>
   );
 };

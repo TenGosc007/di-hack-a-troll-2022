@@ -15,7 +15,13 @@
   &__small {
     margin: 4rem;
   }
-  .text {
-    align-self: center;
+
+  &__footer {
+    width: 95rem;
+    text-align: center;
   }
+}
+
+.text {
+  align-self: center;
 }
