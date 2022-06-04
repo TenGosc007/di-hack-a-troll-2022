@@ -3,8 +3,8 @@ import clsx from 'clsx';
 
 import styles from './text.module.scss';
 
-export const Text = ({ children, className, ...rest }) => {
-  const textStyle = clsx(styles.text, className);
+export const Text = ({ children, className, green, ...rest }) => {
+  const textStyle = clsx(styles.text, className, { [styles.green]: green });
 
   return (
     <div className={textStyle} {...rest}>

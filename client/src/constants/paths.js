@@ -13,8 +13,10 @@ export const paths = {
   linkData: '/link-data',
 };
 
+const exclude = ['/contact', '/survey/questions', '/survey/mail', '/survey/info'];
+
 export const links = objectMapArray(paths, (value, key, index) => ({
   id: index,
   name: key,
   path: value,
-}));
+})).filter(({ path }) => !exclude.find((ex) => ex === path));

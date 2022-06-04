@@ -15,9 +15,29 @@
     "other": "INNE",
     "button": "Rozpocznij ankietę"
   },
+  "survey2": {
+    "yes": "TAK",
+    "no": "NIE",
+    "dontknow": "NIE WIEM"
+  },
   "survey3": {
     "mailLabel": "Podaj swojego maila:",
     "mailPlaceholder": "Tu wpisz e-mail",
-    "button": "Zatwierdź podany link"
+    "button": "Zatwierdź podany link",
+    "footer": "Podanie maila jest wymagane, aby zweryfikować czy nie jesteś botem. Na podanego maila zostanie wysłane potwierdzenie dodania podejrzanego artykułu."
+  },
+  "survey4": {
+    "ok": {
+      "header": "Dziękujemy za zgłoszenie!",
+      "info": "Sprawdź swojego maila i potwierdź dodanie linku abyśmy mogli wstawić go do naszej bazy i ostrzeć innych!",
+      "button1": "Dodaj kolejny artykuł",
+      "button2": "Zobacz wynik"
+    },
+    "notok": {
+      "header": "Już zgłaszałeś ten artykuł!",
+      "info": "Zgłaszałeś już ten artykuł. Czy chcesz podmienić swoje odpowiedzi w naszej bazie podejrzanych artykułów?",
+      "button1": "Dodaj inny artykuł",
+      "button2": "Podmień ankietę"
+    }
   }
 }

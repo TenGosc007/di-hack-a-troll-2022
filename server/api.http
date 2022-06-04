@@ -84,5 +84,47 @@ Content-Type: application/json
 # DELETE ARTICLE
 DELETE http://localhost:5000/api/articles/629b6eabda93832480888cd5 HTTP/1.1
 
+#________________________________ SITES ________________________________
+###
+# GET ALL SITES
+GET http://localhost:5000/api/sites HTTP/1.1
+
+###
+# CREATE SITE
+POST http://localhost:5000/api/sites HTTP/1.1
+Content-Type: application/json
+
+{
+    "url": "http://test1.com"
+}
+
+###
+# DELETE SITE
+DELETE http://localhost:5000/api/sites/629b7faa16a29d3b4bdbfd40 HTTP/1.1
+
+#________________________________ USER ________________________________
+###
+# GET ALL USERS
+GET http://localhost:5000/api/users HTTP/1.1
+
+###
+# CREATE SITE
+POST http://localhost:5000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "test@test.com",
+    "url": "http://test123.com"
+}
+
+###
+# DELETE SITE
+DELETE http://localhost:5000/api/users/629b89b298ed1592d5463ce5 HTTP/1.1
+
+
+
+
+
+
 
 

@@ -5,3 +5,4 @@ export * from './SurveyPage/SurveyPage';
 export * from './LinksBase/LinksBase';
 export * from './SurveyIntroPage/SurveyIntroPage';
 export * from './SurveyMailPage/SurveyMailPage';
+export * from './SurveyInfoPage/SurveyInfoPage';
