@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import Joi from 'joi';
 
 // name:    string
+// list:    array
 
 const categorySchema = new mongoose.Schema({
   name: String,

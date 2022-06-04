@@ -7,6 +7,10 @@ GET http://localhost:5000/api/questions HTTP/1.1
 GET http://localhost:5000/api/questions/6299de9909660ae8bcb6e938 HTTP/1.1
 
 ###
+# GET QUESTION BY LP
+GET http://localhost:5000/api/questions/lp/1 HTTP/1.1
+
+###
 # CREATE QUESTION
 POST http://localhost:5000/api/questions HTTP/1.1
 Content-Type: application/json
