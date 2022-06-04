@@ -15,18 +15,18 @@ export const RatingScale = ({ score }) => {
       stop={5}
       initialRating={score}
       emptySymbol={[
-        <Happy className={styles.emptyIcon} />,
-        <Smile className={styles.emptyIcon} />,
-        <Neutral className={styles.emptyIcon} />,
-        <Sad className={styles.emptyIcon} />,
         <Angry className={styles.emptyIcon} />,
+        <Sad className={styles.emptyIcon} />,
+        <Neutral className={styles.emptyIcon} />,
+        <Smile className={styles.emptyIcon} />,
+        <Happy className={styles.emptyIcon} />,
       ]}
       fullSymbol={[
-        <Happy className={styles.fillIcon} />,
-        <Smile className={styles.fillIcon} />,
-        <Neutral className={styles.fillIcon} />,
-        <Sad className={styles.fillIcon} />,
-        <Angry className={styles.fillIcon} />,
+        <Angry className={styles.angry} />,
+        <Sad className={styles.sad} />,
+        <Neutral className={styles.neutral} />,
+        <Smile className={styles.smile} />,
+        <Happy className={styles.happy} />,
       ]}
     />
   );

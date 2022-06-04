@@ -1,5 +1,6 @@
-import { Input, Layout } from 'components';
+import { Layout } from 'components';
 import { LinkCard } from 'components';
+import { SearchBar } from 'components/SearchBar/SearchBar';
 import { paths } from 'constants/paths';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -7,17 +8,20 @@ import { useNavigate } from 'react-router-dom';
 import styles from './linksBase.module.scss';
 
 const links = [
-  { link: 'www.facebook.com', categories: 'CELEBRYCI', score: 3.5 },
+  { link: 'www.facebook.com', categories: 'CELEBRYCI', score: 1.5 },
   { link: 'www.facebook.com/fake', categories: 'ŚWIAT', score: 2.5 },
-  { link: 'www.facebook.com/fake-nesy', categories: 'ZWIERZĘTA', score: 4 },
+  { link: 'www.facebook.com/fake-nesy', categories: 'ZWIERZĘTA', score: 5 },
   { link: 'www.facebook.com/fake-nesy', categories: 'ZWIERZĘTA', score: 4 },
 ];
 
 export const LinksBase = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([...links]);
   const [sortType, setSortType] = useState();
+  const [query, setQuery] = useState('');
 
   const navigate = useNavigate();
+
+  let mainSearchRegex = new RegExp(query, 'i');
 
   useEffect(() => {
     const sortArray = (type) => {
@@ -34,8 +38,21 @@ export const LinksBase = () => {
     sortArray(sortType);
   }, [sortType]);
 
+  useEffect(() => {
+    filterSearch();
+  }, [query]);
+
   const navigateToLinkData = () => {
     navigate(paths.linkData);
+  };
+
+  const filterSearch = () => {
+    if (query.length > 0) {
+      let newSearch = [...links].filter((link) => mainSearchRegex.test(link.link));
+      setData(newSearch);
+    } else if (query.length === 0) {
+      setData([...links]);
+    }
   };
 
   return (
@@ -43,7 +60,7 @@ export const LinksBase = () => {
       <div className={styles.linksBase}>
         <h1>Baza podejrzanych artykułów:</h1>
         <div className={styles.inputs}>
-          <Input search />
+          <SearchBar query={query} setQuery={setQuery} />
           <select onChange={(e) => setSortType(e.target.value)} className={styles.sorting}>
             <option value="" hidden>
               Sortuj wg...
