@@ -1,0 +1,44 @@
+@import 'style/global';
+
+.layout {
+  @include page-base;
+  display: flex;
+
+  .container {
+    display: flex;
+    transition: 0.3s ease;
+
+    @include respond(tab-port) {
+      transform: translateX(-$w-sidebar-tab);
+    }
+
+    .right {
+      position: relative;
+
+      @include respond(tab-port) {
+        flex: 1 0 100%;
+        padding-top: 2rem;
+      }
+
+      .content {
+        padding: 4rem;
+      }
+
+      .btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(30%, 50%);
+        display: none;
+
+        @include respond(tab-port) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .show {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,10 @@
+@import 'style/global';
+
+.home {
+  @include page-base;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

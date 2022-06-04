@@ -1,0 +1,19 @@
+@import 'style/global';
+
+.counter {
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      width: 2em;
+      text-align: center;
+    }
+  }
+
+  input {
+    margin-top: 1em;
+    margin-right: 1em;
+  }
+}

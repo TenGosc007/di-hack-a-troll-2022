@@ -1,0 +1,35 @@
+@import 'style/global';
+
+.sidebar {
+  background-color: $c-sidebar;
+  color: $c-text-w;
+  width: min($w-sidebar, 40rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2.2rem;
+  padding-bottom: 2rem;
+
+  @include respond(tab-port) {
+    flex: 1 0 $w-sidebar-tab;
+  }
+
+  a {
+    color: $c-text-w;
+  }
+
+  .nav {
+    padding: 4rem;
+    width: 100%;
+
+    .list {
+      list-style-type: none;
+
+      .link {
+        text-transform: capitalize;
+        padding: 0.5rem;
+      }
+    }
+  }
+}

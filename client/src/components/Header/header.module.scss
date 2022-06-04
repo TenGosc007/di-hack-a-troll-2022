@@ -1,0 +1,18 @@
+@import 'style/global';
+
+.header {
+  position: relative;
+  min-height: $h-header;
+  color: $c-black;
+}
+
+.background {
+  position: absolute;
+  height: $h-header;
+  width: 100vw;
+  background-color: $c-header-bg;
+}
+
+.hide {
+  display: none;
+}
