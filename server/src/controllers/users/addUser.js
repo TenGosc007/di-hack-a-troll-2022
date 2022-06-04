@@ -1,20 +1,16 @@
-import { Response, Request } from 'express';
+import { User } from '../../models/userModel.js';
 
-const addUser = async (req: Request, res: Response) => {
-  let user = await userModel.findOne({ email: req.body.email });
+export const addUser = async (req, res) => {
+  let user = await User.findOne({ email: req.body.email });
+
   if (user) {
-    return res.status(StatusCodes.BAD_REQUEST).send('That user already exisits!');
+    return res.status(401).send('That user already exisits!');
   } else {
-    user = new userModel({
-      name: req.body.lastname,
+    user = new User({
       email: req.body.email,
+      articleId: req.body.articleId,
     });
-
     await user.save();
-    res.status(StatusCodes.OK).send(user);
-
-
+    res.status(200).send(user);
   }
 };
-
-export default registerUser;

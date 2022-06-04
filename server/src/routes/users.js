@@ -1,9 +1,13 @@
+import { getUsers } from '../controllers/users/getUsers.js';
 import express from 'express';
 
-import sendEmailToUser from 'controllers/users/sendEmail';
+import { addUser } from '../controllers/users/addUser.js';
+import { sendEmailUser } from '../controllers/users/sendEmail.js';
 
-const routerUser = express.Router();
+const router = express.Router();
 
-router.get('/', sendEmailToUser);
+router.post('/email', sendEmailUser);
+router.post('/add', addUser);
+router.get('/', getUsers);
 
-export default routerUser;
+export default router;
