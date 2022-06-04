@@ -12,12 +12,12 @@ export const sendEmailUser = async (req, res) => {
 
   users.forEach((user) => {
     if (user.email === emailInput) {
-      return res.status(201).send('user exist');
+      return res.status(200).send('user exist');
     }
   });
 
   const url = `http://${process.env.ADDRESSPORT}/users/mail/`;
   const message = await sendEmail(req.body.email, url);
 
-  res.status(StatusCodes.OK).send(message);
+  res.status(201).send(message);
 };
