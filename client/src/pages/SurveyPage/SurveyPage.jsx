@@ -1,5 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
+import { paths } from '../../constants/paths';
 import styles from './surveyPage.module.scss';
 import { Btn, Layout, Text, ProgressBar } from 'components';
 import {
@@ -17,6 +19,7 @@ export const SurveyPage = () => {
   const dispatch = useDispatch();
   const maxPoints = useSelector(selectMaxPoints);
   const points = useSelector(selectPoints);
+  const navigate = useNavigate();
 
   const handleToogle = (answerId) => () => {
     dispatch(toggle(answerId));
@@ -24,8 +27,10 @@ export const SurveyPage = () => {
       dispatch(next());
     } else {
       // TODO return to veryfity page
+
       console.log('finish, maxPoint', maxPoints);
       console.log('point', points);
+      navigate(paths.surveyMail, { replace: true });
     }
   };
 
