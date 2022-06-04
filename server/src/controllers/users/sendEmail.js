@@ -1,22 +1,23 @@
-// import { Response, Request } from "express";
+import validateEmail from './validateEmail.js';
+import sendEmail from '../../utils/email.js';
+import { User } from '../../models/userModel.js';
 
-// import validateEmail from "./validateEmail";
-// import sendEmail from "../utils/email";
-// import userModel from "../../models/user.model";
+export const sendEmailUser = async (req, res) => {
+  const { error } = validateEmail(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
 
-// const sendEmailToUser = async (req, res) => {
-//   const { error } = validateEmail(req.body);
-//   if (error) return res.status(400).send(error.details[0].message);
+  const emailInput = req.body.email;
+  console.log('email', emailInput);
+  const users = await User.find().select('email');
 
-//   const email = req.body.email;
-//   const user = await userModel.findOne({ email }).select("id name email");
-//   if (!user) return res.status(StatusCodes.NOT_FOUND).send("User not found");
+  users.forEach((user) => {
+    if (user.email === emailInput) {
+      return res.status(200).send('user exist');
+    }
+  });
 
-//   const token = user.generateAuthToken();
-//   const url = `http://${process.env.ADDRESSPORT}/users/confirmation/${token}`;
-//   const message = await sendEmail(req.body.email, url);
+  const url = `http://${process.env.ADDRESSPORT}/users/mail/`;
+  const message = await sendEmail(req.body.email, url);
 
-//   res.status(StatusCodes.OK).send(message);
-// };
-
-// export default sendEmailToUser;
+  res.status(201).send(message);
+};

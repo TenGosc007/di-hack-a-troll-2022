@@ -10,5 +10,5 @@ export const createQuestion = async (req, res) => {
   const newQuestion = new Question({ ...req.body });
   await newQuestion.save();
 
-  res.send(newQuestion);
+  res.status(201).send(newQuestion);
 };
