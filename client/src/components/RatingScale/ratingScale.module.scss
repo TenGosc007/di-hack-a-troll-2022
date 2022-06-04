@@ -1,15 +1,13 @@
 @import 'style/global';
 
 .rating {
-  margin-left: 1rem;
-}
+  .emptyIcon {
+    color: $c-silver;
+    margin: 0.25rem;
+  }
 
-.emptyIcon {
-  color: $c-silver;
-  margin: 0.25rem;
-}
-
-.fillIcon {
-  color: $c-darkblue;
-  margin: 0.25rem;
+  .fillIcon {
+    color: $c-darkblue;
+    margin: 0.25rem;
+  }
 }

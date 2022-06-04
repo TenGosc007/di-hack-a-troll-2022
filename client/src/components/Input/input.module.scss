@@ -1,7 +1,8 @@
 @import 'style/global';
 
 .input {
-  border: 1px solid $c-silver;
+  border: 2px solid $c-silver;
+  border-radius: 5px;
   outline: none;
   font-size: 2rem;
   width: 40rem;
@@ -10,4 +11,9 @@
   margin: 1rem;
   display: block;
   color: gray;
+}
+
+.search {
+  width: 15rem;
+  height: 3rem;
 }

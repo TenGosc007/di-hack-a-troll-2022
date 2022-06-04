@@ -7,13 +7,13 @@ import { ReactComponent as Neutral } from 'assets/icons/neutral.svg';
 import { ReactComponent as Smile } from 'assets/icons/smile.svg';
 import { ReactComponent as Happy } from 'assets/icons/happy.svg';
 
-export const RatingScale = (score) => {
+export const RatingScale = ({ score }) => {
   return (
     <Rating
       readonly
       className={styles.rating}
       stop={5}
-      initialRating={3.5}
+      initialRating={score}
       emptySymbol={[
         <Happy className={styles.emptyIcon} />,
         <Smile className={styles.emptyIcon} />,
