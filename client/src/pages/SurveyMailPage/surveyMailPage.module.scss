@@ -1,0 +1,18 @@
+@import 'style/global';
+
+.container {
+  @include page-base;
+
+  width: 90rem;
+  position: relative;
+  margin: auto;
+  padding: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &__small {
+    margin: 4rem;
+  }
+}

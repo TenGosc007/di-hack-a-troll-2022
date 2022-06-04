@@ -1,9 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
-import ReactEcharts from 'echarts-for-react';
 
 import styles from './surveyPage.module.scss';
-import { Layout } from 'components';
-import { Chart } from 'components/Chart';
+import { Btn, Layout } from 'components';
 import {
   selectQuestions,
   next,
@@ -20,7 +18,8 @@ export const SurveyPage = () => {
   const maxPoints = useSelector(selectMaxPoints);
   const points = useSelector(selectPoints);
 
-  const handleNext = () => {
+  const handleToogle = (answerId) => () => {
+    dispatch(toggle(answerId));
     if (questions[activeQuestion + 1]) {
       dispatch(next());
     } else {
@@ -30,34 +29,31 @@ export const SurveyPage = () => {
     }
   };
 
-  const handleToogle = (answerId) => () => {
-    dispatch(toggle(answerId));
-  };
-
   return (
     <Layout>
-      <ReactEcharts option={Chart} className={styles.chart} />
-      Survey
-      <div>
+      <div className={styles.survey}>
         <p>
           {activeQuestion + 1}/ {questions.length}
         </p>
         <p>{questions[activeQuestion].content}</p>
-
-        {questions[activeQuestion].answers.map((answer, index) => (
-          <button key={index} onClick={handleToogle(index)}>
-            <button
-              onClick={() => {
-                console.log('answer', answer.checked);
-                answer.checked;
-              }}
-              key={index}
-            />
-            {answer.content}
-          </button>
-        ))}
-
-        <button onClick={handleNext}>Next</button>
+        {/* pytania tu wyzej */}
+        <ul>
+          {questions[activeQuestion].answers.map((answer, index) => (
+            <Btn outline key={index} onClick={handleToogle(index)} className={styles.btn}>
+              <>
+                {answer.content}
+                <div
+                  className={styles.buttons}
+                  onClick={() => {
+                    console.log('answer', answer.checked);
+                    answer.checked;
+                  }}
+                  key={index}
+                />
+              </>
+            </Btn>
+          ))}
+        </ul>
       </div>
     </Layout>
   );
