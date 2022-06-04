@@ -14,5 +14,10 @@
     "children": "DZIECI",
     "other": "INNE",
     "button": "Rozpocznij ankietę"
+  },
+  "survey3": {
+    "mailLabel": "Podaj swojego maila:",
+    "mailPlaceholder": "Tu wpisz e-mail",
+    "button": "Zatwierdź podany link"
   }
 }

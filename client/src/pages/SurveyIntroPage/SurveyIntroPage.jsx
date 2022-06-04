@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import styles from './surveyIntroPage.module.scss';
@@ -6,14 +6,28 @@ import { Text, Btn, Layout, Input } from 'components';
 
 export const SurveyIntroPage = () => {
   const { t } = useTranslation(['survey']);
+  const [link, setLink] = useState('');
+  const [category, setCategory] = useState('');
+
+  const onChange = (e) => {
+    setLink(e.target.value);
+  };
+
+  const handleClick = (e) => {
+    setCategory(e.target.value);
+  };
+
+  console.log(link);
+  console.log(category);
+
   return (
     <Layout>
       <div className={styles.container}>
         <Text children={t`survey1.linkLabel`} />
-        <Input placeholder={t`survey1.linkPlaceholder`} type="url" name="url" id="url" pattern="https://.*" required />
+        <Input placeholder={t`survey1.linkPlaceholder`} type="url" value={link} onChange={onChange} />
         <Text children={t`survey1.categoryLabel`} />
         <div className={styles.container__categories}>
-          <Btn children={t`survey1.culture`} outline />
+          <Btn children={t`survey1.culture`} outline value={category} onClick={handleClick} />
           <Btn children={t`survey1.science`} outline />
           <Btn children={t`survey1.world`} outline />
           <Btn children={t`survey1.celebrities`} outline />
@@ -24,7 +38,9 @@ export const SurveyIntroPage = () => {
           <Btn children={t`survey1.children`} outline />
           <Btn children={t`survey1.other`} outline />
         </div>
-        <Btn children={t`survey1.button`} />
+        <div className={styles.container__small}>
+          <Btn children={t`survey1.button`} type="submit" />
+        </div>
       </div>
     </Layout>
   );
