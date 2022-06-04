@@ -11,6 +11,4 @@ export const createSite = async (req, res) => {
   await newSite.save();
 
   res.status(201).send(newSite);
-
-  console.log('test');
 };
