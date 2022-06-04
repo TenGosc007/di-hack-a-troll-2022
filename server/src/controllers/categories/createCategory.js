@@ -10,5 +10,5 @@ export const createCategory = async (req, res) => {
   const newCategory = new Category({ ...req.body });
   await newCategory.save();
 
-  res.send(newCategory);
+  res.status(201).send(newCategory);
 };
