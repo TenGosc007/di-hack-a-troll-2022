@@ -27,9 +27,10 @@ export const SurveyPage = () => {
       dispatch(next());
     } else {
       // TODO return to veryfity page
-      navigate(paths.surveyMail, { replace: true })
+
       console.log('finish, maxPoint', maxPoints);
       console.log('point', points);
+      navigate(paths.surveyMail, { replace: true });
     }
   };
 

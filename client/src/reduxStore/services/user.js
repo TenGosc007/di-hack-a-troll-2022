@@ -2,18 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:5000/',
-    // method: 'no-cors',
-    // headers: {
-    //   'Content-type': 'application/json',
-    //   'Access-Control-Allow-Origin': '*',
-    //   'Access-Control-Allow-Methods': 'GET, PUT, POST, PATCH, DELETE',
-    // },
-    // prepareHeaders: (headers) => {
-    //   headers.set('Content-Type', 'application/json');
-    //   console.log(headers);
-    //   return headers;
-    // },
+    baseUrl: 'https://server-di-hack-a-troll-2022.vercel.app/',
   }),
   endpoints: (builder) => ({
     login: builder.mutation({
