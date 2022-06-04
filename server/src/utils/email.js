@@ -1,24 +1,24 @@
-import nodemailer from "nodemailer";
+import nodemailer from 'nodemailer';
 
 export default async function sendEmail(email) {
-	const transporter = nodemailer.createTransport({
-		host: "smtp.mail.yahoo.com",
-		port: 465,
-		service: "yahoo",
-		secure: false,
-		auth: {
-			user: process.env.EMAIL,
-			pass: process.env.PASSWORDYAHOO,
-		},
-		debug: false,
-		logger: true,
-	});
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.mail.yahoo.com',
+    port: 465,
+    service: 'yahoo',
+    secure: false,
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.PASSWORDYAHOO,
+    },
+    debug: false,
+    logger: true,
+  });
 
-	const mailOptions = {
-		from: process.env.EMAIL,
-		to: email,
-		subject: "Dziękujemy za dodanie artykułu",
-		html: `
+  const mailOptions = {
+    from: process.env.EMAIL,
+    to: email,
+    subject: 'Dziękujemy za dodanie artykułu',
+    html: `
 		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 			<tbody>
 				<tr>
@@ -136,7 +136,8 @@ export default async function sendEmail(email) {
 									<td
 										align="center"
 										style="
-											font-family: 'Lato', sans-serif;
+													ащте-афьшднЖ эДфещэб ыфты-ыукшаж
+									font-family: 'Lato', sans-serif;
 											font-size: 14px;
 											color: #757575;
 											line-height: 24px;
@@ -152,7 +153,7 @@ export default async function sendEmail(email) {
 					</td>
 				</tr>
 			</tbody>
-		</table>`,
+		</table>`
 	};
 
 	try {

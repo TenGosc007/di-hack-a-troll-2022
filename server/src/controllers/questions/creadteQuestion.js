@@ -1,4 +1,4 @@
-import { Question, validateQuestion } from "../../models/questionModel.js";
+import { Question, validateQuestion } from '../../models/questionModel.js';
 
 export const createQuestion = async (req, res) => {
   const { error } = validateQuestion(req.body);
