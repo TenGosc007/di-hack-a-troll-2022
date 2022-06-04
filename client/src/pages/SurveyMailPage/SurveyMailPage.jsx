@@ -16,6 +16,7 @@ export const SurveyMailPage = () => {
           <Btn children={t`survey3.button`} type="submit" />
         </div>
       </div>
+      <div className={styles.container__footer}>{t`survey3.footer`}</div>
     </Layout>
   );
 };

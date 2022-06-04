@@ -10,18 +10,10 @@ export const SurveyIntroPage = () => {
   const { t } = useTranslation(['survey']);
   const navigate = useNavigate();
   const [link, setLink] = useState('');
-  const [category, setCategory] = useState('');
 
   const onChange = (e) => {
     setLink(e.target.value);
   };
-
-  const handleClick = (e) => {
-    setCategory(e.target.value);
-  };
-
-  console.log(link);
-  console.log(category);
 
   return (
     <Layout>
@@ -30,7 +22,7 @@ export const SurveyIntroPage = () => {
         <Input placeholder={t`survey1.linkPlaceholder`} type="url" value={link} onChange={onChange} />
         <Text children={t`survey1.categoryLabel`} />
         <div className={styles.container__categories}>
-          <Btn children={t`survey1.culture`} outline value={category} onClick={handleClick} />
+          <Btn children={t`survey1.culture`} outline />
           <Btn children={t`survey1.science`} outline />
           <Btn children={t`survey1.world`} outline />
           <Btn children={t`survey1.celebrities`} outline />

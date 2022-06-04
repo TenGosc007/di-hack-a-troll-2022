@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 
 import styles from './surveyPage.module.scss';
-import { Btn, Layout } from 'components';
+import { Btn, Layout, Text, ProgressBar } from 'components';
 import {
   selectQuestions,
   next,
@@ -32,11 +32,7 @@ export const SurveyPage = () => {
   return (
     <Layout>
       <div className={styles.survey}>
-        <p>
-          {activeQuestion + 1}/ {questions.length}
-        </p>
-        <p>{questions[activeQuestion].content}</p>
-        {/* pytania tu wyzej */}
+        <Text>{questions[activeQuestion].content}</Text>
         <ul>
           {questions[activeQuestion].answers.map((answer, index) => (
             <Btn outline key={index} onClick={handleToogle(index)} className={styles.btn}>
@@ -54,6 +50,10 @@ export const SurveyPage = () => {
             </Btn>
           ))}
         </ul>
+        <div className={styles.progress}>
+          {activeQuestion + 1}/ {questions.length}
+          <ProgressBar progress={(100 / questions.length) * activeQuestion} />
+        </div>
       </div>
     </Layout>
   );
