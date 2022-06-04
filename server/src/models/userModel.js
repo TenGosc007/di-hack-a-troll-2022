@@ -1,15 +1,18 @@
 import mongoose from 'mongoose';
 import Joi from 'joi';
 
+// name:  string
+// url:   string
+
 const userSchema = new mongoose.Schema({
   email: String,
-  articleId: String,
+  articles: [String],
 });
 
 export const validateUser = (user) => {
   const schema = Joi.object({
-    email: Joi.string().required(),
-    articleId: Joi.string().required(),
+    email: Joi.string().email().required(),
+    url: Joi.string().required(),
   });
 
   return schema.validate(user);
