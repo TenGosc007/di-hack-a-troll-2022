@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://server-brain-code.vercel.app/',
+    baseUrl: process.env.REACT_SERVER || 'http://localhost:5000',
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
       token && headers.set('x-auth-token', token);
