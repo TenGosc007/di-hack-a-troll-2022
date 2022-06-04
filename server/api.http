@@ -66,3 +66,23 @@ Content-Type: application/json
 # DELETE TAG
 DELETE http://localhost:5000/api/tags/629b6493a47a1f222017cb3d HTTP/1.1
 
+#________________________________ ARTICLES ________________________________
+###
+# GET ALL ARTICLES
+GET http://localhost:5000/api/articles HTTP/1.1
+
+###
+# CREATE ARTICLE
+POST http://localhost:5000/api/articles HTTP/1.1
+Content-Type: application/json
+
+{
+    "url": "http://test1.com"
+}
+
+###
+# DELETE ARTICLE
+DELETE http://localhost:5000/api/articles/629b6eabda93832480888cd5 HTTP/1.1
+
+
+
