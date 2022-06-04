@@ -1,0 +1,26 @@
+@import 'style/global';
+
+.container {
+  @include page-base;
+
+  width: 80rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background-color: 'white';
+  position: relative;
+  margin: 15rem 7rem;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &__buttons {
+    gap: 3rem;
+    display: flex;
+  }
+
+  &__small {
+    margin: 4rem;
+  }
+}

@@ -1,0 +1,16 @@
+@import 'style/global';
+
+.linksBase {
+  width: 80vw;
+
+  .layout {
+    display: grid;
+    grid-template-columns: auto 25rem 16rem;
+    width: 80%;
+  }
+  .inputs {
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+  }
+}
