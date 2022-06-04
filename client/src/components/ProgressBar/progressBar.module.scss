@@ -1,0 +1,21 @@
+@import 'style/global';
+
+.container {
+  height: 2rem;
+  width: 80%;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  margin: 50;
+}
+
+.child {
+  height: 100%;
+  width: 0;
+  background-color: $c-green;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.progressText {
+  color: #000000;
+}
