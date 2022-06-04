@@ -7,7 +7,7 @@ import styles from './aboutPage.module.scss';
 import { useGetPokemonByNameQuery } from 'reduxStore/services/pokemon';
 import { selectCurrentUser } from 'reduxStore/auth';
 import { Login } from './Login';
-import { useGetUserDataMutation } from 'reduxStore/services/auth';
+import { useGetUserDataMutation } from 'reduxStore/services/user';
 
 export const AboutPage = () => {
   const { t } = useTranslation(['about']);

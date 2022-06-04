@@ -2,12 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://server-brain-code.vercel.app/',
-    prepareHeaders: (headers, { getState }) => {
-      const token = getState().auth.token;
-      token && headers.set('x-auth-token', token);
-      return headers;
-    },
+    baseUrl: 'https://server-di-hack-a-troll-2022.vercel.app/',
   }),
   endpoints: (builder) => ({
     login: builder.mutation({
@@ -20,7 +15,17 @@ export const api = createApi({
     getUserData: builder.mutation({
       query: (id) => `users/${id}`,
     }),
+    sentEmail: builder.mutation({
+      query: (credentials) => (
+        console.log('cre', credentials),
+        {
+          url: `api/users/email`,
+          method: 'post',
+          body: credentials,
+        }
+      ),
+    }),
   }),
 });
 
-export const { useLoginMutation, useGetUserDataMutation } = api;
+export const { useLoginMutation, useGetUserDataMutation, useSentEmailMutation } = api;
