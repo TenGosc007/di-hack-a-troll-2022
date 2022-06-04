@@ -136,8 +136,7 @@ export default async function sendEmail(email) {
 									<td
 										align="center"
 										style="
-													ащте-афьшднЖ эДфещэб ыфты-ыукшаж
-									font-family: 'Lato', sans-serif;
+											font-family: 'Lato', sans-serif;
 											font-size: 14px;
 											color: #757575;
 											line-height: 24px;
@@ -153,13 +152,13 @@ export default async function sendEmail(email) {
 					</td>
 				</tr>
 			</tbody>
-		</table>`
-	};
+		</table>`,
+  };
 
-	try {
-		await transporter.sendMail(mailOptions);
-		return "Mail has been sent!";
-	} catch {
-		return "Something is wrong!";
-	}
+  try {
+    await transporter.sendMail(mailOptions);
+    return 'Mail has been sent!';
+  } catch {
+    return 'Something is wrong!';
+  }
 }
