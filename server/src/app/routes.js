@@ -11,6 +11,7 @@ import tags from '../routes/tags.js';
 import users from '../routes/users.js';
 
 export const routes = (app) => {
+  app.use(cors());
   app.use(express.json());
   app.use('/', defautlRoute);
   app.use('/api/articles', articles);
@@ -19,6 +20,5 @@ export const routes = (app) => {
   app.use('/api/sites', sites);
   app.use('/api/tags', tags);
   app.use('/api/users', users);
-  app.use(cors());
   app.use(error);
 };
