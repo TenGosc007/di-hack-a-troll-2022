@@ -1,0 +1,14 @@
+@import 'style/global';
+
+.linkBase {
+  display: grid;
+  grid-template-columns: auto 25rem 16rem;
+  //TODO zmienić wartość szerokości
+  width: 80%;
+  border: solid 0.2rem $c-green;
+  border-radius: 0.5rem;
+  justify-items: start;
+  align-items: center;
+  padding: 0.5rem 0.5rem 0.5rem 2rem;
+  margin-top: 2rem;
+}
