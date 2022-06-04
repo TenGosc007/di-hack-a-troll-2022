@@ -3,13 +3,18 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const api = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'http://localhost:5000/',
-    mode: 'no-cors',
-    prepareHeaders: (headers) => {
-      headers.set('Access-Control-Allow-Origin', '*');
-      // headers.set('Access-Control-Allow/-Methods', 'GET, PUT, POST, PATCH, DELETE');
-      // headers.set('Access-Control-Allow-Headers', '*'); //
-      return headers;
+    method: 'no-cors',
+    headers: {
+      'Content-type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, PUT, POST, PATCH, DELETE',
     },
+    // prepareHeaders: (headers) => {
+    //   // headers.set('Access-Control-Allow-Origin', '*');
+    //   // headers.set('Access-Control-Allow/-Methods', 'GET, PUT, POST, PATCH, DELETE');
+    //   headers.set('Access-Control-Allow-Headers', '*'); //
+    //   return headers;
+    // },
   }),
   endpoints: (builder) => ({
     login: builder.mutation({
