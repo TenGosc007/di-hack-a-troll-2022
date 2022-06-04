@@ -28,7 +28,7 @@ export const SurveyMailPage = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <Text children={t`survey3.mailLabel`} />
+        <Text children={t`survey3.mailLabel`} className={styles.text}/>
         <Input placeholder={t`survey3.mailPlaceholder`} type="mail" value={email} onChange={handlEemail} />
         <div className={styles.container__small}>
           {!isLoading ? <Btn children={t`survey3.button`} type="submit" onClick={hadleClickBtn} /> : <p>...Loading</p>}
