@@ -4,3 +4,4 @@ export * from './NotFoundPage/NotFoundPage';
 export * from './SurveyPage/SurveyPage';
 export * from './SurveyIntroPage/SurveyIntroPage';
 export * from './SurveyMailPage/SurveyMailPage';
+export * from './SurveyInfoPage/SurveyInfoPage';
