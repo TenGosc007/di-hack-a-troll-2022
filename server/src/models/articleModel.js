@@ -2,12 +2,14 @@ import mongoose from 'mongoose';
 import Joi from 'joi';
 
 // url:         string
+// title:       string
 // tags:        array string
 // categories   array string
 // results      array string
 
 const articleSchema = new mongoose.Schema({
   url: String,
+  title: String,
   tags: [String],
   categories: [String],
   results: [String],
@@ -16,6 +18,7 @@ const articleSchema = new mongoose.Schema({
 export const validateArticle = (article) => {
   const schema = Joi.object({
     url: Joi.string().required(),
+    title: Joi.string(),
     tags: Joi.array().items(Joi.string()),
     categories: Joi.array().items(Joi.string()),
     results: Joi.array().items(Joi.string()),

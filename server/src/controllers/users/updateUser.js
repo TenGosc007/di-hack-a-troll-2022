@@ -10,10 +10,9 @@ export const createUser = async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   const user = await User.findOne({ email: req.body.email });
-  const article = await Article.findOne({ url: req.body.url });
-  if (user && article) {
-    const foundArticle = user.articles.find((e) => e === article._id.toString());
-    if (foundArticle) return res.status(200).send(req.body);
+  if (user) {
+    const article = await Article.findOne({ url: req.body.url });
+    if (article) return res.status(200).send(req.body);
   }
 
   let response = { user: user };
@@ -35,6 +34,7 @@ export const createUser = async (req, res) => {
     return res.status(400).send('invalid url');
   }
 
+  const article = await Article.findOne({ url: req.body.url });
   response.article = article;
   if (!article) {
     const newArticle = new Article({
@@ -86,9 +86,6 @@ export const createUser = async (req, res) => {
     });
     await newUser.save();
     response.user = newUser;
-  } else {
-    user.articles.push(response.article._id);
-    await user.save();
   }
 
   //TODO uncomment later

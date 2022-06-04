@@ -46,7 +46,7 @@ Content-Type: application/json
 
 ###
 # DELETE CATEGORY
-DELETE http://localhost:5000/api/categories/629b40d86ce2f93969611e4f HTTP/1.1
+DELETE http://localhost:5000/api/categories/629bd32dc804f7f14b7db957 HTTP/1.1
 
 #________________________________ TAGS ________________________________
 ###
@@ -112,9 +112,14 @@ GET http://localhost:5000/api/users HTTP/1.1
 POST http://localhost:5000/api/users HTTP/1.1
 Content-Type: application/json
 
+# https://pl.wikipedia.org/wiki/Paraponera_clavata
+# https://czeladz.naszemiasto.pl/nasze-slodziaki-swietuja-czyli-dzien-kota-2021-zobacz-memy/ar/c11-8142405
+
 {
-    "email": "test@test.com",
-    "url": "http://test123.com"
+    "email": "margiebed+12@gmail.com",
+    "url": "https://czeladz.naszemiasto.pl/nasze-slodziaki-swietuja-czyli-dzien-kota-2021-zobacz-memy/ar/c11-8142405",
+    "category": "629ba7b9f0f7357914b9f628",
+    "result": 20
 }
 
 ###
