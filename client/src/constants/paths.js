@@ -8,6 +8,7 @@ export const paths = {
   surveyQuestions: '/survey/questions',
   surveyMail: '/survey/mail',
   surveyInfo: '/survey/info',
+  linksBase: '/links-base',
 };
 
 const exclude = ['/contact', '/survey/questions', '/survey/mail', '/survey/info'];

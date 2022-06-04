@@ -3,7 +3,16 @@ import { Route, Routes } from 'react-router-dom';
 
 import { paths } from 'constants/paths';
 import { Loader } from 'components';
-import { AboutPage, HomePage, NotFoundPage, SurveyIntroPage, SurveyPage, SurveyMailPage, SurveyInfoPage } from 'pages';
+import {
+  AboutPage,
+  HomePage,
+  NotFoundPage,
+  SurveyIntroPage,
+  SurveyPage,
+  SurveyMailPage,
+  SurveyInfoPage,
+  LinksBase,
+} from 'pages';
 
 export const App = () => {
   return (
@@ -16,6 +25,7 @@ export const App = () => {
           <Route path={paths.surveyQuestions} element={<SurveyPage />} />
           <Route path={paths.surveyMail} element={<SurveyMailPage />} />
           <Route path={paths.surveyInfo} element={<SurveyInfoPage />} />
+          <Route path={paths.linksBase} element={<LinksBase />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
