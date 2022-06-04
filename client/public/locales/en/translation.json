@@ -1,0 +1,9 @@
+{
+  "pageTitle": "Page Title",
+  "counter": {
+    "add": "Add"
+  },
+  "footer": {
+    "paragraph": "Projekt przygotowany w ramach\nHACK-A-TROLL"
+  }
+}

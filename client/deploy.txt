@@ -1,0 +1,11 @@
+  
+package.json
+    "homepage": "https://tengosc007.github.io/hackathon2022",
+
+index.js
+    HashRouter instead of browseRouter
+
+i18n.js
+    backend: {
+      loadPath: 'hackathon2022/locales/{{lng}}/{{ns}}.json',
+    },

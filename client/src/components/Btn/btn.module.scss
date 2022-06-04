@@ -1,0 +1,36 @@
+@import 'style/global';
+
+.button {
+  background-color: $c-darkblue;
+  width: 25rem;
+  height: 5rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    filter: brightness(0.9);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.outline {
+  background-color: #ffffff;
+  width: 10rem;
+  height: 3rem;
+  border: 2px solid $c-stroke;
+  color: #000000;
+  font-size: 1.6rem;
+
+  &:focus {
+    border: 2px solid $c-green;
+  }
+}

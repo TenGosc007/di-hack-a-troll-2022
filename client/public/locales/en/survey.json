@@ -1,0 +1,18 @@
+{
+  "survey1": {
+    "linkLabel": "Podaj link do podejrzanego artykułu:",
+    "linkPlaceholder": "Tu wpisz link",
+    "categoryLabel": "Do jakiej kategorii należy artykuł:",
+    "culture": "KULTURA",
+    "science": "NAUKA",
+    "world": "ŚWIAT",
+    "celebrities": "CELEBRYCI",
+    "politics": "POLITYKA",
+    "sport": "SPORT",
+    "finance": "FINANSE",
+    "animals": "ZWIERZĘTA",
+    "children": "DZIECI",
+    "other": "INNE",
+    "button": "Rozpocznij ankietę"
+  }
+}
