@@ -8,7 +8,7 @@ import { AboutPage, HomePage, NotFoundPage, SurveyIntroPage, SurveyPage, SurveyM
 export const App = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path={paths.home} element={<HomePage />} />

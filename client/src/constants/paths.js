@@ -10,6 +10,7 @@ export const paths = {
   surveyInfo: '/survey/info',
 
   linksBase: '/links-base',
+  linkData: '/link-data',
 };
 
 export const links = objectMapArray(paths, (value, key, index) => ({
