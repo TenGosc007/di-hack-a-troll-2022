@@ -58,3 +58,19 @@ jobs:
         # that runs prettier to check code format
         working-directory: ./client
         run: yarn format:check
+
+      - name: Install server modules
+        working-directory: ./server
+        run: yarn
+
+      - name: Run ESLint
+        # Run the lint custom NPM command that triggers the
+        # ESLint linter check
+        working-directory: ./server
+        run: yarn lint
+
+      - name: Run Prettier
+        # Run the format:check custom NPM command
+        # that runs prettier to check code format
+        working-directory: ./server
+        run: yarn format:check

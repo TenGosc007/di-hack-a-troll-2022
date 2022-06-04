@@ -1,9 +1,9 @@
-import "dotenv/config";
-import "colors";
-import express from "express";
+import 'dotenv/config';
+import 'colors';
+import express from 'express';
 
-import { connectDB } from "./app/db.js";
-import { routes } from "./app/routes.js";
+import { connectDB } from './app/db.js';
+import { routes } from './app/routes.js';
 
 const app = express();
 routes(app);
