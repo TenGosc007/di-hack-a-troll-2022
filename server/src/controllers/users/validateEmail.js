@@ -1,9 +1,9 @@
-import Joi from "joi";
+import Joi from 'joi';
 
 export default function validateEmail(email) {
-	const schema = Joi.object({
-		email: Joi.string().min(5).max(250).required().email(),
-	});
+  const schema = Joi.object({
+    email: Joi.string().min(5).max(250).required().email(),
+  });
 
-	return schema.validate(email);
+  return schema.validate(email);
 }
