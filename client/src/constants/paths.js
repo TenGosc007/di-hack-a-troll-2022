@@ -5,7 +5,9 @@ export const paths = {
   about: '/about',
   contact: '/contact',
   survey: '/survey',
-  surveyMail:'/survey-mail'
+  surveyQuestions: '/survey/questions',
+  surveyMail: '/survey/mail',
+  surveyInfo: '/survey/info',
 };
 
 export const links = objectMapArray(paths, (value, key, index) => ({
