@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 
 import { pokemonApi } from './services/pokemon';
-import { api } from './services/auth';
+import { api } from './services/user';
 import counterReducer from './counter';
 import authRducer from './auth';
 import surveyReducer from './survey/surveySlice';

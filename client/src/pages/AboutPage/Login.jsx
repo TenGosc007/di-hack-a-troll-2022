@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { setCredentials } from 'reduxStore/auth';
-import { useLoginMutation } from 'reduxStore/services/auth';
+import { useLoginMutation } from 'reduxStore/services/user';
 
 export const Login = () => {
   const [email, setEmail] = useState('');
