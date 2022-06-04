@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
+import { paths } from '../../constants/paths';
 import styles from './surveyIntroPage.module.scss';
 import { Text, Btn, Layout, Input } from 'components';
 
 export const SurveyIntroPage = () => {
   const { t } = useTranslation(['survey']);
+  const navigate = useNavigate();
   const [link, setLink] = useState('');
   const [category, setCategory] = useState('');
 
@@ -39,7 +42,11 @@ export const SurveyIntroPage = () => {
           <Btn children={t`survey1.other`} outline />
         </div>
         <div className={styles.container__small}>
-          <Btn children={t`survey1.button`} type="submit" />
+          <Btn
+            children={t`survey1.button`}
+            type="submit"
+            onClick={() => navigate(paths.surveyQuestions, { replace: true })}
+          />
         </div>
       </div>
     </Layout>
