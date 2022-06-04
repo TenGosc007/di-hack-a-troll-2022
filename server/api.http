@@ -7,6 +7,10 @@ GET http://localhost:5000/api/questions HTTP/1.1
 GET http://localhost:5000/api/questions/6299de9909660ae8bcb6e938 HTTP/1.1
 
 ###
+# GET QUESTION BY LP
+GET http://localhost:5000/api/questions/lp/1 HTTP/1.1
+
+###
 # CREATE QUESTION
 POST http://localhost:5000/api/questions HTTP/1.1
 Content-Type: application/json
@@ -36,9 +40,10 @@ POST http://localhost:5000/api/categories HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "kultura"
+    "name": "kultura",
+    "list": [1, 2, 3]
 }
 
 ###
 # DELETE CATEGORY
-DELETE http://localhost:5000/api/categories/629b41145407877c3559ef64 HTTP/1.1
+DELETE http://localhost:5000/api/categories/629b40d86ce2f93969611e4f HTTP/1.1
