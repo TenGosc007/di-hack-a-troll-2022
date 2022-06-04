@@ -4,8 +4,11 @@ export const createCategory = async (req, res) => {
   const { error } = validateCategory(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const category = new Category({ ...req.body });
-  await category.save();
+  const category = await Category.findOne({ name: req.body.name });
+  if (category) return res.status(400).send('question already exisits!');
 
-  res.send(category);
+  const newCategory = new Category({ ...req.body });
+  await newCategory.save();
+
+  res.send(newCategory);
 };

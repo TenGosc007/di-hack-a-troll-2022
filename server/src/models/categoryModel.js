@@ -6,11 +6,13 @@ import Joi from 'joi';
 
 const categorySchema = new mongoose.Schema({
   name: String,
+  list: [Number],
 });
 
 export const validateCategory = (category) => {
   const schema = Joi.object({
     name: Joi.string().required(),
+    list: Joi.array().items(Joi.number()),
   });
 
   return schema.validate(category);
