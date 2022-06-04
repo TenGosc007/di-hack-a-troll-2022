@@ -6,6 +6,7 @@ import { Text, Btn, Layout, Input } from 'components';
 
 export const SurveyIntroPage = () => {
   const { t } = useTranslation(['survey']);
+
   const [link, setLink] = useState('');
   const [category, setCategory] = useState('');
 
