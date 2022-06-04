@@ -17,6 +17,7 @@ import {
 export const App = () => {
   return (
     <>
+      {/* <Header /> */}
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path={paths.home} element={<HomePage />} />
