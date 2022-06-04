@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import Joi from "joi";
+import mongoose from 'mongoose';
+import Joi from 'joi';
 
 // lp:          number
 // question:    string
@@ -24,4 +24,4 @@ export const validateQuestion = (question) => {
   return schema.validate(question);
 };
 
-export const Question = mongoose.model("Question", questionSchema);
+export const Question = mongoose.model('Question', questionSchema);

@@ -1,3 +1,3 @@
-export default function (err, req, res, next) {
-  res.status(500).send("Something failed.");
+export default function (err, req, res) {
+  res.status(500).send('Something failed.');
 }
