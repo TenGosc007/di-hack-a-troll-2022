@@ -12,19 +12,18 @@ import { useUpdateEmailMutation } from 'reduxStore/services/user';
 export const SurveyInfoPage = () => {
   const { t } = useTranslation(['survey']);
   const navigate = useNavigate();
-  const [sentEmail, { isLoading }] = useUpdateEmailMutation();
+  const [sentEmail] = useUpdateEmailMutation();
   const isSuccess = useSelector(selectSuccess);
   const url = useSelector(selectUrl);
   const categoryId = useSelector(selectCategoryId);
   const result = useSelector(selectResult);
   const myEmail = useSelector(selectEmail);
-  const dispatch = useDispatch();
 
   const hadleClickBtn = async () => {
     console.log(myEmail, result, url, categoryId);
 
     try {
-      const user = await sentEmail({
+      await sentEmail({
         email: myEmail,
         url: url,
         category: categoryId,
