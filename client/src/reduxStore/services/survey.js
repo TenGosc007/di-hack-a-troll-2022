@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const survey = createApi({
   reducerPath: 'survey',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://server-di-hack-a-troll-2022.vercel.app/api/',
+    baseUrl: process.env.REACT_APP_URL || 'http://localhost:5000/',
   }),
   endpoints: (builder) => ({
     getSurveyId: builder.mutation({

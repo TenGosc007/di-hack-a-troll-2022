@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const articleApi = createApi({
   reducerPath: 'articles',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://server-di-hack-a-troll-2022.vercel.app/',
+    baseUrl: process.env.REACT_APP_URL || 'http://localhost:5000/',
   }),
   endpoints: (builder) => ({
     getAllArticles: builder.mutation({
