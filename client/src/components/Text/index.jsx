@@ -14,7 +14,7 @@ export const Text = ({ children, className, green, ...rest }) => {
 };
 
 Text.defaultProps = {
-  children: 'Text',
+  children: '',
 };
 
 Text.propTypes = {
