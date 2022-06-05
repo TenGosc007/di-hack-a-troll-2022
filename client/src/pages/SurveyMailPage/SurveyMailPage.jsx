@@ -9,7 +9,7 @@ export const SurveyMailPage = () => {
   const { t } = useTranslation(['survey']);
   const [email, setEmail] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
-  const handlEemail = ({ target: { value } }) => setEmail(value);
+  const handlEmail = ({ target: { value } }) => setEmail(value);
   const [sentEmail, { isLoading }] = useSentEmailMutation();
 
   const hadleClickBtn = async () => {
@@ -28,7 +28,7 @@ export const SurveyMailPage = () => {
     <Layout>
       <div className={styles.container}>
         <Text children={t`survey3.mailLabel`} className={styles.text} />
-        <Input placeholder={t`survey3.mailPlaceholder`} type="mail" value={email} onChange={handlEemail} />
+        <Input placeholder={t`survey3.mailPlaceholder`} type="mail" value={email} onChange={handlEmail} />
         <div className={styles.container__small}>
           {!isLoading ? <Btn children={t`survey3.button`} type="submit" onClick={hadleClickBtn} /> : <p>...Loading</p>}
           {errorMsg && <p>{errorMsg}</p>}

@@ -42,6 +42,8 @@ Po kliknięciu w przycisk „Sprawdź artykuł”, użytkownik zostaje przeniesi
 #### Wprowadzenie linka oraz wybór kategorii
 Na tej stronie użytkownik wprowadza link artykułu bądź materiału zamieszczonego w Internecie, który chciałby sprawdzić. Poniżej znajdują się przyciski z kategoriami. Zadaniem użytkownika jest wybranie odpowiedniej / odpowiednich kategorii. Kliknięcie na jakąkolwiek z nich spowoduje dodanie zielonego obramowania. Niżej znajduje się przycisk „Rozpocznij ankietę”, który przenosi użytkownika na kolejną podstronę.
 
+![Zrzut ekranu 2022-06-05 o 06 03 46](https://user-images.githubusercontent.com/75137091/172034574-349e1c02-8c6b-4ed6-b011-2a5c11a813a8.jpg)
+
 #### Pytania 
 Tutaj użytkownik może zauważyć losowo wybrane pytania dotyczące artykułu. Poniżej znajdują się trzy przyciski: „TAK”, „NIE WIEM” oraz „NIE”. Użytkownik powinien odpowiedzieć na 10 pytań zgodnie ze swoimi odczuciami. Dodatkowo, na dole znajduje się pasek postępu, podpowiadający na ile pytań użytkownik udzielił już odpowiedzi, a na ile jeszcze nie. 
 
@@ -55,6 +57,8 @@ Jeśli jednak użytkownik dodał ten sam artykuł ponownie, wówczas zostaje o t
 
 ### Baza artykułów
 Na niniejszej stronie użytkownik może przejrzeć dodane do bazy artykuły. U góry znajdują się pola „Szukaj” oraz „Sortuj”, z kolei nieco niżej – dodane przez użytkowników linki. Każdy link posiada kategorie oraz wynik, pokazujący prawdopodobieństwo autentyczności danego materiału. Im mniej zadowolona emoji, tym prawdopodobieństwo fejka jest wyższe. 
+
+![Zrzut ekranu 2022-06-05 o 06 02 52](https://user-images.githubusercontent.com/75137091/172034582-7bc747a1-ae75-41e7-83cb-70416ebdf133.png)
 
 
 Po kliknięciu na konkretny link, użytkownik zostaje przeniesiony na stronę statystyk, gdzie może się zapoznać ze szczegółową analizą dotyczącą samego artykułu, jak i witryny.
