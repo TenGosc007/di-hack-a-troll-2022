@@ -57,6 +57,46 @@ export const LinksBase = () => {
       setData(newSearch);
     } else if (query.length === 0) {
       setData([...linkdata]);
+      console.log(linkdata);
+    }
+  };
+
+  const resultsScale = (project) => {
+    const sum = project.reduce((a, b) => a + b, 0);
+    const avg = sum / project.length || 0;
+
+    if (avg == 0) {
+      return 5;
+    }
+    if (avg == 10) {
+      return 4.5;
+    }
+    if (avg == 20) {
+      return 4;
+    }
+    if (avg == 30) {
+      return 3.5;
+    }
+    if (avg == 40) {
+      return 3;
+    }
+    if (avg == 50) {
+      return 2.5;
+    }
+    if (avg <= 60) {
+      return 2;
+    }
+    if (avg == 70) {
+      return 1.5;
+    }
+    if (avg == 80) {
+      return 1;
+    }
+    if (avg == 90) {
+      return 0.5;
+    }
+    if (avg == 100) {
+      return 0;
     }
   };
 
@@ -83,7 +123,7 @@ export const LinksBase = () => {
         {linkdata.map((project) => (
           <div key={project.id}>
             <LinkCard
-              score={project.results}
+              score={resultsScale(project.results)}
               fakelink={project.url}
               categories={project.categories}
               onClick={navigateToLinkData}
