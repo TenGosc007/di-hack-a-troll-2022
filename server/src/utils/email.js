@@ -11,7 +11,7 @@ export default async function sendEmail(email) {
       pass: process.env.PASSWORDYAHOO,
     },
     debug: false,
-    logger: true,
+    logger: false,
   });
 
   const mailOptions = {
@@ -157,8 +157,8 @@ export default async function sendEmail(email) {
 
   try {
     await transporter.sendMail(mailOptions);
-    return 'Mail has been sent!';
+    console.log('Mail has been sent!');
   } catch {
-    return 'Something is wrong!';
+    console.log('Something is wrong!');
   }
 }

@@ -8,10 +8,12 @@ export const paths = {
   surveyQuestions: '/survey/questions',
   surveyMail: '/survey/mail',
   surveyInfo: '/survey/info',
+
   linksBase: '/links-base',
+  linkData: '/link-data',
 };
 
-const exclude = ['/contact', '/survey/questions', '/survey/mail', '/survey/info'];
+const exclude = ['/about', '/contact', '/survey/questions', '/survey/mail', '/survey/info', '/link-data'];
 
 export const links = objectMapArray(paths, (value, key, index) => ({
   id: index,

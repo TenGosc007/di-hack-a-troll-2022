@@ -1,19 +1,9 @@
-import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useCallback, useState, useEffect } from 'react';
 
 import { paths } from '../../constants/paths';
-import { objectMapArray } from 'utils';
 import styles from './surveyPage.module.scss';
 import { Btn, Layout, Text, ProgressBar } from 'components';
-import {
-  selectQuestions,
-  next,
-  selectActiveQuestion,
-  toggle,
-  selectMaxPoints,
-  selectPoints,
-} from 'reduxStore/survey/surveySlice';
 import { useGetSurveyIdMutation } from 'reduxStore/services/survey';
 
 export const SurveyPage = () => {

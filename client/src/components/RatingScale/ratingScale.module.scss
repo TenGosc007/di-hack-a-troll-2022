@@ -6,8 +6,24 @@
     margin: 0.25rem;
   }
 
-  .fillIcon {
-    color: $c-darkblue;
+  .angry {
     margin: 0.25rem;
+    color: #11557a;
+  }
+  .sad {
+    margin: 0.25rem;
+    color: #246a6b;
+  }
+  .neutral {
+    margin: 0.25rem;
+    color: #3d845a;
+  }
+  .smile {
+    margin: 0.25rem;
+    color: #5fa841;
+  }
+  .happy {
+    margin: 0.25rem;
+    color: #7dc82c;
   }
 }

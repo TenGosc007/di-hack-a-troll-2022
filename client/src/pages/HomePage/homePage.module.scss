@@ -2,9 +2,149 @@
 
 .home {
   @include page-base;
+  height: 300vh;
+}
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.container1 {
+  background-image: url('../../assets/images/background1.png');
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  &__all {
+    padding-left: 3rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__head {
+    font-family: 'Permanent Marker', cursive;
+    color: $c-green;
+    font-size: 6rem;
+    width: 65%;
+  }
+  &__headw {
+    font-family: 'Permanent Marker', cursive;
+    color: $c-green;
+    font-size: 20rem;
+  }
+
+  &__grap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__txt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__instr {
+    width: 80%;
+    color: #000000;
+    line-height: 3rem;
+    padding: 1rem;
+    margin-right: 8rem;
+  }
+
+  &__instrText {
+    align-self: flex-start;
+    padding: 3rem;
+    margin-left: 1rem;
+    font-size: 3rem;
+  }
+
+  &__btns {
+    display: flex;
+    gap: 5rem;
+    padding: 4rem;
+    margin-right: 6rem;
+  }
+}
+
+.container2 {
+  background-image: url('../../assets/images/background2.png');
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  &__head {
+    font-family: 'Permanent Marker', cursive;
+    color: $c-green;
+    font-size: 4rem;
+    padding: 2rem;
+    align-self: flex-start;
+    margin-left: 8rem;
+  }
+
+  &__txt {
+    color: #ffffff;
+    line-height: 3rem;
+    width: 90%;
+    margin-bottom: 1rem;
+    margin-left: 12rem;
+  }
+}
+
+.container3 {
+  background-image: url('../../assets/images/background3.png');
+  height: 100vh;
+
+  &__all {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    height: 90vh;
+  }
+
+  &__header {
+    font-family: 'Permanent Marker', cursive;
+    color: $c-green;
+    font-size: 4rem;
+    align-self: flex-start;
+    margin-bottom: 2rem;
+    margin-left: 5rem;
+  }
+
+  &__txt {
+    color: #000000;
+    line-height: 3rem;
+    width: 80%;
+    margin-bottom: 4rem;
+    margin-right: 4rem;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__txtfoot {
+    font-size: 2rem;
+  }
+
+  &__head {
+    font-family: 'Permanent Marker', cursive;
+    color: $c-green;
+    font-size: 3rem;
+    padding: 1rem;
+    align-self: flex-start;
+  }
+}
+
+.arrowBlue {
+  position: absolute;
+  top: 95%;
+  left: 45%;
+}
+
+.arrowWhite {
+  position: absolute;
+  top: 195%;
+  left: 45%;
 }
