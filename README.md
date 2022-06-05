@@ -55,7 +55,7 @@ Po udzieleniu odpowiedzi na wszystkie pytania, użytkownik zostaje przeniesiony 
 #### Strona informacyjna
 W przypadku, gdy użytkownik po raz pierwszy dodał dany artykuł oraz swoje odczucia na temat jego prawdopodobieństwa, wówczas wklejony przez niego link, odpowiedzi i wynik zostają zapisane do bazy, a jego oczom ukazuje się podziękowanie za zgłoszenie.
 
-![Zrzut ekranu 2022-06-05 o 06 30 20](https://user-images.githubusercontent.com/75137091/172035103-49cbfc4b-eca3-43ef-9826-aee2a5622507.jpg)
+![Zrzut ekranu 2022-06-05 o 06 38 53](https://user-images.githubusercontent.com/75137091/172035268-afdc258f-270b-44dc-8ddf-a6279d4a83dc.jpg)
 
 Jeśli jednak użytkownik dodał ten sam artykuł ponownie, wówczas zostaje o tym poinformowany. Niżej znajdują się dwa przyciski: „Dodaj inny artykuł” (kliknięcie spowoduje przeniesienie na pierwszą cześć strony ankiety) oraz „Podmień ankietę” (kliknięcie spowoduje zamianę wyniku ze starego na nowy). 
 
