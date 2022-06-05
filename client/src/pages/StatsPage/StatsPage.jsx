@@ -26,11 +26,12 @@ export const StatsPage = () => {
   return (
     <Layout>
       <div className={styles.container}>
-          <>
-            <Text green>Statystyki dodanej strony</Text>
-            <div className={styles.container__text}>Tytuł: {statData.article?.title}</div>
-            <div className={styles.container__text}>URL: {statData.article?.url}</div>
-          </>;
+        <>
+          <Text green>Statystyki dodanej strony</Text>
+          <div className={styles.container__text}>Tytuł: {statData.article?.title}</div>
+          <div className={styles.container__text}>URL: {statData.article?.url}</div>
+        </>
+        ;
       </div>
     </Layout>
   );
