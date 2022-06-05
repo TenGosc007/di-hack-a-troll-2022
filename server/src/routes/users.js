@@ -5,9 +5,8 @@ import { createUser } from '../controllers/users/createUser.js';
 import { sendEmailUser } from '../controllers/users/sendEmail.js';
 import { updateUser } from '../controllers/users/updateUser.js';
 import { deleteUser } from '../controllers/users/deleteUser.js';
-import { sendEmailUser } from '../controllers/users/sendEmail.js';
+
 const router = express.Router();
-router.post('/email', sendEmailUser);
 router.get('/', getUsers);
 router.post('/', createUser);
 router.post('/email', sendEmailUser);
