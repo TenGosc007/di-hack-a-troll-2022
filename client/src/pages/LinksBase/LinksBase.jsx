@@ -3,7 +3,6 @@ import { paths } from 'constants/paths';
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useGetAllArticlesMutation } from 'reduxStore/services/articles';
-import { objectMapArray } from 'utils';
 
 import styles from './linksBase.module.scss';
 
