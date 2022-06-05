@@ -7,71 +7,71 @@ import { objectMapArray } from 'utils';
 
 import styles from './linksBase.module.scss';
 
-const links = [
-  { url: 'www.facebook.com', categories: 'CELEBRYCI', results: 1.5 },
-  { url: 'www.facebook.com/fake', categories: 'ŚWIAT', results: 2.5 },
-  { url: 'www.facebook.com/fake-nesy', categories: 'ZWIERZĘTA', results: 5 },
-  { url: 'www.facebook.com/fake-nesy', categories: 'ZWIERZĘTA', results: 4 },
-];
+// const links = [
+//   { url: 'www.facebook.com', categories: 'CELEBRYCI', results: 1.5 },
+//   { url: 'www.facebook.com/fake', categories: 'ŚWIAT', results: 2.5 },
+//   { url: 'www.facebook.com/fake-nesy', categories: 'ZWIERZĘTA', results: 5 },
+//   { url: 'www.facebook.com/fake-nesy', categories: 'ZWIERZĘTA', results: 4 },
+// ];
 
 export const LinksBase = () => {
-  // const [links] = useGetAllArticlesMutation();
-  const [data, setData] = useState([...links]);
+  const [getlinks] = useGetAllArticlesMutation();
+  const [data, setData] = useState([]);
   // const [data, setData] = useGetAllArticlesMutation();
   const [sortType, setSortType] = useState();
   const [query, setQuery] = useState('');
 
   const navigate = useNavigate();
 
-  console.log(data);
-
   let mainSearchRegex = new RegExp(query, 'i');
 
-  // const getArticleData = useCallback(async () => {
-  //   setData(
-  //     objectMapArray((val, key) => (
-  //       <p>
-  //         {key}: {val}
-  //       </p>
-  //     ))
-  //   );
-  // }, [links]);
+  const getLinksData = useCallback(async () => {
+    const res = await getlinks();
+    console.log(res.data);
+    // if (res.data) {
+    // links(
+    //   objectMapArray(res.data, (val, key) => (
+    //     <Btn key={key} children={val.name} outline onClick={() => setChooseCategory(val)} />
+    //   ))
+    // );
+    // }
+  }, []);
+
+  useEffect(() => {
+    getLinksData();
+  }, [getLinksData]);
 
   // useEffect(() => {
-  //   getArticleData();
-  // }, [getArticleData]);
+  //   const sortArray = (type) => {
+  //     const types = {
+  //       max: 'results',
+  //       min: 'results',
+  //     };
+  //     const sortProperty = types[type];
+  //     let sorted;
+  //     if (sortType === 'max') sorted = [...links].sort((a, b) => a[sortProperty] - b[sortProperty]);
+  //     else sorted = [...links].sort((a, b) => b[sortProperty] - a[sortProperty]);
+  //     setData(sorted);
+  //   };
+  //   sortArray(sortType);
+  // }, [sortType]);
 
-  useEffect(() => {
-    const sortArray = (type) => {
-      const types = {
-        max: 'results',
-        min: 'results',
-      };
-      const sortProperty = types[type];
-      let sorted;
-      if (sortType === 'max') sorted = [...links].sort((a, b) => a[sortProperty] - b[sortProperty]);
-      else sorted = [...links].sort((a, b) => b[sortProperty] - a[sortProperty]);
-      setData(sorted);
-    };
-    sortArray(sortType);
-  }, [sortType]);
-
-  useEffect(() => {
-    filterSearch();
-  }, [query]);
+  // useEffect(() => {
+  //   filterSearch();
+  // }, [query]);
 
   const navigateToLinkData = () => {
     navigate(paths.linkData);
   };
 
-  const filterSearch = () => {
-    if (query.length > 0) {
-      let newSearch = [...links].filter((link) => mainSearchRegex.test(link.link));
-      setData(newSearch);
-    } else if (query.length === 0) {
-      setData([...links]);
-    }
-  };
+  // const filterSearch = () => {
+  //   if (query.length > 0) {
+  //     let newSearch = [...links].filter((link) => mainSearchRegex.test(link.link));
+  //     setData(newSearch);
+  //   } else if (query.length === 0) {
+  //     setData([...links]);
+  //   }
+  // };
 
   return (
     <Layout>
