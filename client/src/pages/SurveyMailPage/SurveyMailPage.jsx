@@ -1,21 +1,54 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import { useSentEmailMutation } from 'reduxStore/services/user';
+import { paths } from 'constants/paths';
 import styles from './surveyMailPage.module.scss';
+import { useSentEmailMutation } from 'reduxStore/services/user';
+import {
+  selectCategoryId,
+  selectUrl,
+  calculateResults,
+  selectResult,
+  setSuccess,
+  setEmailState,
+} from 'reduxStore/articles';
 import { Text, Btn, Layout, Input } from 'components';
 
 export const SurveyMailPage = () => {
   const { t } = useTranslation(['survey']);
   const [email, setEmail] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
-  const handlEmail = ({ target: { value } }) => setEmail(value);
   const [sentEmail, { isLoading }] = useSentEmailMutation();
+  const url = useSelector(selectUrl);
+  const categoryId = useSelector(selectCategoryId);
+  const result = useSelector(selectResult);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    dispatch(calculateResults());
+  }, []);
+
+  const handlEmail = ({ target: { value } }) => setEmail(value);
 
   const hadleClickBtn = async () => {
+    console.log(email, result, url, categoryId);
+
     try {
-      const user = await sentEmail({ email });
-      console.log('sent', user);
+      const user = await sentEmail({
+        email: email,
+        url: url,
+        category: categoryId,
+        result: result,
+      });
+      console.log(!!user.data.metaData);
+
+      dispatch(setEmailState(email));
+      dispatch(setSuccess(!!user.data.metaData));
+      navigate(paths.surveyInfo);
+
       setErrorMsg('');
       if (user.error) setErrorMsg(user.error.data);
     } catch (err) {

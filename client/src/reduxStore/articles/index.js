@@ -7,6 +7,9 @@ const initialState = {
   fake: 0,
   real: 0,
   page: 0,
+  result: 0,
+  success: true,
+  email: '',
 };
 
 export const sentDataSlice = createSlice({
@@ -24,20 +27,30 @@ export const sentDataSlice = createSlice({
     addReal: (state) => {
       state.real += 1;
     },
-    calculateResults: ({ fake, real }) => {
-      (fake * 100) / (fake + real);
+    calculateResults: (state) => {
+      state.result = (state.fake * 100) / (state.fake + state.real);
     },
     setPage: (state, { payload }) => {
       state.page = payload;
     },
+    setSuccess: (state, { payload }) => {
+      state.success = payload;
+    },
+    setEmailState: (state, { payload }) => {
+      state.email = payload;
+    },
   },
 });
 
-export const { setCategory, addFake, addReal } = sentDataSlice.actions;
+export const { setCategory, addFake, addReal, calculateResults, setPage, setSuccess, setEmailState } =
+  sentDataSlice.actions;
 
 export const selectUrl = (state) => state.sentData.url;
 export const selectList = (state) => state.sentData.list;
 export const selectPage = (state) => state.sentData.page;
 export const selectCategoryId = (state) => state.sentData.categoryId;
+export const selectResult = (state) => state.sentData.result;
+export const selectSuccess = (state) => state.sentData.success;
+export const selectEmail = (state) => state.sentData.email;
 
 export default sentDataSlice.reducer;
