@@ -33,7 +33,7 @@ Poniżej użytkownik może zapoznać się z krótką częścią informacyjną do
 
 ![Zrzut ekranu 2022-06-05 o 04 53 25](https://user-images.githubusercontent.com/75137091/172032974-90c6ed09-761b-4e51-a6aa-94e04012c71d.png)
 
-![Zrzut ekranu 2022-06-05 o 04 53 30](https://user-images.githubusercontent.com/75137091/172032977-7ed66a88-fb6c-48c4-8aaf-e46d77b0fa35.png)
+![Zrzut ekranu 2022-06-05 o 05 01 54](https://user-images.githubusercontent.com/75137091/172033160-7f2dae80-7f03-4a20-8f0f-88d18e9bd67d.png)
 
 
 ### Ankieta
