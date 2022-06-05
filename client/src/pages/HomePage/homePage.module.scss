@@ -10,6 +10,7 @@
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  padding: 7rem;
 
   &__all {
     padding-left: 3rem;
@@ -71,6 +72,7 @@
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  padding: 7rem;
 
   &__head {
     font-family: 'Permanent Marker', cursive;
@@ -114,7 +116,6 @@
     color: #000000;
     line-height: 3rem;
     width: 80%;
-    margin-bottom: 4rem;
     margin-right: 4rem;
   }
 
