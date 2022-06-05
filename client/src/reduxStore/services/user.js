@@ -19,7 +19,7 @@ export const api = createApi({
       query: (credentials) => (
         console.log('cre', credentials),
         {
-          url: `api/users/email`,
+          url: `api/users/createUser`,
           method: 'post',
           body: credentials,
         }
