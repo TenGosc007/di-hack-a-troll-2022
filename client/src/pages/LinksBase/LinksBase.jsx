@@ -1,31 +1,51 @@
 import { Layout, LinkCard, SearchBar } from 'components';
 import { paths } from 'constants/paths';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useGetAllArticlesMutation } from 'reduxStore/services/articles';
+import { objectMapArray } from 'utils';
 
 import styles from './linksBase.module.scss';
 
 const links = [
-  { link: 'www.facebook.com', categories: 'CELEBRYCI', score: 1.5 },
-  { link: 'www.facebook.com/fake', categories: 'ŚWIAT', score: 2.5 },
-  { link: 'www.facebook.com/fake-nesy', categories: 'ZWIERZĘTA', score: 5 },
-  { link: 'www.facebook.com/fake-nesy', categories: 'ZWIERZĘTA', score: 4 },
+  { url: 'www.facebook.com', categories: 'CELEBRYCI', results: 1.5 },
+  { url: 'www.facebook.com/fake', categories: 'ŚWIAT', results: 2.5 },
+  { url: 'www.facebook.com/fake-nesy', categories: 'ZWIERZĘTA', results: 5 },
+  { url: 'www.facebook.com/fake-nesy', categories: 'ZWIERZĘTA', results: 4 },
 ];
 
 export const LinksBase = () => {
+  // const [links] = useGetAllArticlesMutation();
   const [data, setData] = useState([...links]);
+  // const [data, setData] = useGetAllArticlesMutation();
   const [sortType, setSortType] = useState();
   const [query, setQuery] = useState('');
 
   const navigate = useNavigate();
 
+  console.log(data);
+
   let mainSearchRegex = new RegExp(query, 'i');
+
+  // const getArticleData = useCallback(async () => {
+  //   setData(
+  //     objectMapArray((val, key) => (
+  //       <p>
+  //         {key}: {val}
+  //       </p>
+  //     ))
+  //   );
+  // }, [links]);
+
+  // useEffect(() => {
+  //   getArticleData();
+  // }, [getArticleData]);
 
   useEffect(() => {
     const sortArray = (type) => {
       const types = {
-        max: 'score',
-        min: 'score',
+        max: 'results',
+        min: 'results',
       };
       const sortProperty = types[type];
       let sorted;
@@ -76,8 +96,8 @@ export const LinksBase = () => {
         {data.map((project) => (
           <div key={project.id}>
             <LinkCard
-              score={project.score}
-              fakelink={project.link}
+              score={project.results}
+              fakelink={project.url}
               categories={project.categories}
               onClick={navigateToLinkData}
             />
