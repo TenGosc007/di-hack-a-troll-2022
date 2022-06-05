@@ -1,19 +1,15 @@
 import { Layout, LinkCard, SearchBar } from 'components';
 import { paths } from 'constants/paths';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useGetAllArticlesMutation } from 'reduxStore/services/articles';
 
 import styles from './linksBase.module.scss';
 
-const links = [
-  { link: 'www.facebook.com', categories: 'CELEBRYCI', score: 1.5 },
-  { link: 'www.facebook.com/fake', categories: 'ŚWIAT', score: 2.5 },
-  { link: 'www.facebook.com/fake-nesy', categories: 'ZWIERZĘTA', score: 5 },
-  { link: 'www.facebook.com/fake-nesy', categories: 'ZWIERZĘTA', score: 4 },
-];
-
 export const LinksBase = () => {
-  const [data, setData] = useState([...links]);
+  const [getlinks] = useGetAllArticlesMutation();
+  const [linkdata, setData] = useState([]);
+
   const [sortType, setSortType] = useState();
   const [query, setQuery] = useState('');
 
@@ -21,16 +17,27 @@ export const LinksBase = () => {
 
   let mainSearchRegex = new RegExp(query, 'i');
 
+  const getLinksData = useCallback(async () => {
+    const res = await getlinks();
+    if (res.data) {
+      setData(res.data);
+    }
+  }, []);
+
+  useEffect(() => {
+    getLinksData();
+  }, [getLinksData]);
+
   useEffect(() => {
     const sortArray = (type) => {
       const types = {
-        max: 'score',
-        min: 'score',
+        max: 'results',
+        min: 'results',
       };
       const sortProperty = types[type];
       let sorted;
-      if (sortType === 'max') sorted = [...links].sort((a, b) => a[sortProperty] - b[sortProperty]);
-      else sorted = [...links].sort((a, b) => b[sortProperty] - a[sortProperty]);
+      if (sortType === 'max') sorted = [...linkdata].sort((a, b) => a[sortProperty] - b[sortProperty]);
+      else sorted = [...linkdata].sort((a, b) => b[sortProperty] - a[sortProperty]);
       setData(sorted);
     };
     sortArray(sortType);
@@ -46,10 +53,10 @@ export const LinksBase = () => {
 
   const filterSearch = () => {
     if (query.length > 0) {
-      let newSearch = [...links].filter((link) => mainSearchRegex.test(link.link));
+      let newSearch = [...linkdata].filter((link) => mainSearchRegex.test(link.link));
       setData(newSearch);
     } else if (query.length === 0) {
-      setData([...links]);
+      setData([...linkdata]);
     }
   };
 
@@ -73,11 +80,11 @@ export const LinksBase = () => {
           <p>Fejk</p>
         </div>
 
-        {data.map((project) => (
+        {linkdata.map((project) => (
           <div key={project.id}>
             <LinkCard
-              score={project.score}
-              fakelink={project.link}
+              score={project.results}
+              fakelink={project.url}
               categories={project.categories}
               onClick={navigateToLinkData}
             />

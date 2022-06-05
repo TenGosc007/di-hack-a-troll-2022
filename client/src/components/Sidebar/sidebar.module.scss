@@ -24,6 +24,8 @@
     width: 100%;
 
     .list {
+      // position: absolute;
+      margin: auto 0;
       list-style-type: none;
       max-width: min($w-sidebar, 40rem);
 
