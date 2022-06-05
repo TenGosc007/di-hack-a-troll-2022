@@ -16,16 +16,20 @@ export const api = createApi({
       query: (id) => `users/${id}`,
     }),
     sentEmail: builder.mutation({
-      query: (credentials) => (
-        console.log('cre', credentials),
-        {
-          url: `api/users/createUser`,
-          method: 'post',
-          body: credentials,
-        }
-      ),
+      query: (credentials) => ({
+        url: '/api/users',
+        method: 'POST',
+        body: credentials,
+      }),
+    }),
+    updateEmail: builder.mutation({
+      query: (credentials) => ({
+        url: '/api/users',
+        method: 'PUT',
+        body: credentials,
+      }),
     }),
   }),
 });
 
-export const { useLoginMutation, useGetUserDataMutation, useSentEmailMutation } = api;
+export const { useLoginMutation, useGetUserDataMutation, useSentEmailMutation, useUpdateEmailMutation } = api;

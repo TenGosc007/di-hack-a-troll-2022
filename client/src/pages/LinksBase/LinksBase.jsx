@@ -65,39 +65,46 @@ export const LinksBase = () => {
     const sum = project.reduce((a, b) => a + b, 0);
     const avg = sum / project.length || 0;
 
-    if (avg == 0) {
-      return 5;
-    }
-    if (avg == 10) {
-      return 4.5;
-    }
-    if (avg == 20) {
-      return 4;
-    }
-    if (avg == 30) {
-      return 3.5;
-    }
-    if (avg == 40) {
-      return 3;
-    }
-    if (avg == 50) {
-      return 2.5;
-    }
-    if (avg <= 60) {
-      return 2;
-    }
-    if (avg == 70) {
-      return 1.5;
-    }
-    if (avg == 80) {
-      return 1;
-    }
-    if (avg == 90) {
-      return 0.5;
-    }
-    if (avg == 100) {
+    if (avg >= 100) {
       return 0;
     }
+    if (avg >= 90) {
+      return 0.5;
+    }
+    if (avg >= 80) {
+      return 1;
+    }
+    if (avg >= 70) {
+      return 1.5;
+    }
+    if (avg >= 60) {
+      return 2;
+    }
+    if (avg >= 50) {
+      return 2.5;
+    }
+    if (avg >= 40) {
+      return 3;
+    }
+    if (avg >= 30) {
+      return 3.5;
+    }
+    if (avg >= 20) {
+      return 4;
+    }
+    if (avg >= 10) {
+      return 4.5;
+    }
+    if (avg >= 0) {
+      return 5;
+    }
+  };
+
+  const categories = ['KULTURA', 'NAUKA', 'SPORT', 'DZIECI', 'CELEBRYCI', 'POLITYKA', 'INNE', 'ŚWIAT', 'ZWIERZĘTA'];
+
+  const rnNumber = () => {
+    const num = Math.floor(Math.random() * 9);
+    return categories[num];
   };
 
   return (
@@ -125,7 +132,7 @@ export const LinksBase = () => {
             <LinkCard
               score={resultsScale(project.results)}
               fakelink={project.url}
-              categories={project.categories}
+              categories={rnNumber()}
               onClick={navigateToLinkData}
             />
           </div>

@@ -23,7 +23,7 @@ export const AboutPage = () => {
       if (res.data)
         setUserData(
           objectMapArray(res.data, (val, key) => (
-            <p>
+            <p key={key}>
               {key}: {val}
             </p>
           ))
