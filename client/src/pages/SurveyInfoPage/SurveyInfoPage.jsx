@@ -5,35 +5,36 @@ import { useNavigate } from 'react-router-dom';
 
 import { paths } from 'constants/paths';
 import styles from './surveyInfoPage.module.scss';
-import { selectCategoryId, selectEmail, selectResult, selectSuccess, selectUrl } from 'reduxStore/articles';
+import { selectSuccess } from 'reduxStore/articles';
+// import { selectCategoryId, selectEmail, selectResult, selectSuccess, selectUrl } from 'reduxStore/articles';
 import { Text, Btn, Layout } from 'components';
-import { useUpdateEmailMutation } from 'reduxStore/services/user';
+// import { useUpdateEmailMutation } from 'reduxStore/services/user';
 
 export const SurveyInfoPage = () => {
   const { t } = useTranslation(['survey']);
   const navigate = useNavigate();
-  const [sentEmail] = useUpdateEmailMutation();
+  // const [sentEmail] = useUpdateEmailMutation();
   const isSuccess = useSelector(selectSuccess);
-  const url = useSelector(selectUrl);
-  const categoryId = useSelector(selectCategoryId);
-  const result = useSelector(selectResult);
-  const myEmail = useSelector(selectEmail);
+  // const url = useSelector(selectUrl);
+  // const categoryId = useSelector(selectCategoryId);
+  // const result = useSelector(selectResult);
+  // const myEmail = useSelector(selectEmail);
 
-  const hadleClickBtn = async () => {
-    console.log(myEmail, result, url, categoryId);
+  // const hadleClickBtn = async () => {
+  //   console.log(myEmail, result, url, categoryId);
 
-    try {
-      await sentEmail({
-        email: myEmail,
-        url: url,
-        category: categoryId,
-        result: result,
-      });
-    } catch (err) {
-      console.log(err);
-    }
-    navigate(paths.linkBase);
-  };
+  //   try {
+  //     await sentEmail({
+  //       email: myEmail,
+  //       url: url,
+  //       category: categoryId,
+  //       result: result,
+  //     });
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  //   navigate(paths.linkBase);
+  // };
 
   return (
     <>
