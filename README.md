@@ -59,7 +59,7 @@ W przypadku, gdy użytkownik po raz pierwszy dodał dany artykuł oraz swoje odc
 
 ![Zrzut ekranu 2022-06-05 o 06 38 53](https://user-images.githubusercontent.com/75137091/172035268-afdc258f-270b-44dc-8ddf-a6279d4a83dc.jpg)
 
-Jeśli jednak użytkownik dodał ten sam artykuł ponownie, wówczas zostaje o tym poinformowany. Niżej znajdują się dwa przyciski: „Dodaj inny artykuł” (kliknięcie spowoduje przeniesienie na pierwszą cześć strony ankiety) oraz „Podmień ankietę” (kliknięcie spowoduje zamianę wyniku ze starego na nowy). 
+Jeśli jednak użytkownik dodał ten sam artykuł ponownie, wówczas zostaje o tym poinformowany. Niżej znajdują się dwa przyciski: „Dodaj inny artykuł” (kliknięcie spowoduje przeniesienie na pierwszą część strony ankiety) oraz „Podmień ankietę” (kliknięcie spowoduje zamianę wyniku ze starego na nowy). 
 
 ![Zrzut ekranu 2022-06-05 o 06 31 01](https://user-images.githubusercontent.com/75137091/172035109-2c6d4f8c-72b5-44bb-b375-72b0f5d081f3.jpg)
 
