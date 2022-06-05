@@ -11,9 +11,18 @@ export const paths = {
 
   linksBase: '/links-base',
   linkData: '/link-data',
+  statsPage: '/statistics',
 };
 
-const exclude = ['/about', '/contact', '/survey/questions', '/survey/mail', '/survey/info', '/link-data'];
+const exclude = [
+  '/about',
+  '/contact',
+  '/survey/questions',
+  '/survey/mail',
+  '/survey/info',
+  '/link-data',
+  '/statistics',
+];
 
 export const links = objectMapArray(paths, (value, key, index) => ({
   id: index,

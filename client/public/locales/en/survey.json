@@ -29,7 +29,7 @@
   "survey4": {
     "ok": {
       "header": "Dziękujemy za zgłoszenie!",
-      "info": "Sprawdź swojego maila i potwierdź dodanie linku abyśmy mogli wstawić go do naszej bazy i ostrzeć innych!",
+      "info": "Dodany artykuł został wstawiony do naszej bazy. Dzięki Tobie możemy ostrzeć innych!",
       "button1": "Dodaj kolejny artykuł",
       "button2": "Zobacz wynik"
     },
