@@ -8,14 +8,14 @@ import Joi from 'joi';
 
 const userSchema = new mongoose.Schema({
   email: String,
-  articles: [String],
+  articles: [{ id: String, result: Number, category: String }],
 });
 
 export const validateUser = (user) => {
   const schema = Joi.object({
     email: Joi.string().email().required(),
     url: Joi.string().required(),
-    category: Joi.string(),
+    category: Joi.string().required(),
     result: Joi.number().required(),
   });
 

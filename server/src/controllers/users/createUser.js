@@ -12,7 +12,7 @@ export const createUser = async (req, res) => {
   const user = await User.findOne({ email: req.body.email });
   const article = await Article.findOne({ url: req.body.url });
   if (user && article) {
-    const foundArticle = user.articles.find((e) => e === article._id.toString());
+    const foundArticle = user.articles.find(({ id }) => id === article._id.toString());
     if (foundArticle) return res.status(200).send(req.body);
   }
 
@@ -82,12 +82,12 @@ export const createUser = async (req, res) => {
   if (!user) {
     const newUser = new User({
       email: req.body.email,
-      articles: [response.article._id],
+      articles: [{ id: response.article._id, result: req.body.result, category: req.body.category }],
     });
     await newUser.save();
     response.user = newUser;
   } else {
-    user.articles.push(response.article._id);
+    user.articles.push({ id: response.article._id, result: req.body.result, category: req.body.category });
     await user.save();
   }
 

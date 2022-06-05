@@ -1,95 +1,38 @@
-import getMetaData from 'metadata-scraper';
-
 // import sendEmail from '../../utils/email.js';
 import { Article } from '../../models/articleModel.js';
-import { Site } from '../../models/siteModel.js';
 import { User, validateUser } from '../../models/userModel.js';
 
-export const createUser = async (req, res) => {
+export const updateUser = async (req, res) => {
   const { error } = validateUser(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
   const user = await User.findOne({ email: req.body.email });
-  if (user) {
-    const article = await Article.findOne({ url: req.body.url });
-    if (article) return res.status(200).send(req.body);
+  const article = await Article.findOne({ url: req.body.url });
+  if (!user) return res.status(404).send('user not found.');
+
+  if (article) {
+    const data = user.articles.find(({ id }) => id === article._id.toString());
+    const dataIndex = user.articles.findIndex(({ id }) => id === article._id.toString());
+
+    const resultsIndex = article.results.findIndex((val) => val.toString() === data.result.toString());
+    if (resultsIndex >= 0) article.results[resultsIndex] = req.body.result;
+
+    const categoryIndex = article.categories.findIndex((val) => val.toString() === data.category.toString());
+    if (categoryIndex >= 0) article.categories[categoryIndex] = req.body.category;
+    await article.save();
+
+    if (dataIndex >= 0) {
+      user.articles[dataIndex].result = req.body.result;
+      user.articles[dataIndex].category = req.body.category;
+    }
+    await user.save();
   }
 
   let response = { user: user };
-  let metaData = {};
-
-  try {
-    const data = await getMetaData(req.body.url);
-
-    const reg = /.*?\w\//;
-    const articleSite = reg.exec(req.body.url)[0];
-
-    metaData = {
-      title: data?.title || [],
-      tags: data?.keywords || [],
-      site: articleSite,
-    };
-    response.metaData = metaData;
-  } catch (err) {
-    return res.status(400).send('invalid url');
-  }
-
-  const article = await Article.findOne({ url: req.body.url });
   response.article = article;
-  if (!article) {
-    const newArticle = new Article({
-      url: req.body.url,
-      title: metaData.title,
-      tags: [...metaData.tags],
-      categories: [req.body.category],
-      results: [req.body.result],
-    });
-    await newArticle.save();
-    response.article = newArticle;
-  } else {
-    article.categories.push(req.body.category);
-    article.results.push(req.body.result);
-    await article.save();
-  }
-
-  const site = await Site.findOne({ url: metaData.site });
-  response.site = site;
-  if (!site) {
-    try {
-      const data = await getMetaData('' + metaData.site);
-
-      const siteData = {
-        title: data?.title || [],
-        tags: data?.keywords || [],
-      };
-
-      const newSite = new Site({
-        url: metaData.site,
-        title: siteData.title,
-        tags: [...siteData.tags],
-        articles: [response.article._id],
-      });
-      await newSite.save();
-      response.site = newSite;
-    } catch (err) {
-      console.log('save site error', metaData.site);
-    }
-  } else {
-    site.articles.push(response.article._id);
-    await site.save();
-  }
-
-  if (!user) {
-    const newUser = new User({
-      email: req.body.email,
-      articles: [response.article._id],
-    });
-    await newUser.save();
-    response.user = newUser;
-  }
 
   //TODO uncomment later
   // await sendEmail(req.body.email);
 
-  res.status(201).send(response);
+  res.status(200).send(response);
 };
