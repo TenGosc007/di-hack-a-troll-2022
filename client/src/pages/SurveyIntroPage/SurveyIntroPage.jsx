@@ -12,6 +12,7 @@ import { useGetCategoriesMutation } from 'reduxStore/services/categories';
 
 export const SurveyIntroPage = () => {
   const { t } = useTranslation(['survey']);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [getCategories] = useGetCategoriesMutation();

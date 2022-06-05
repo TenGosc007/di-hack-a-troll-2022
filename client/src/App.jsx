@@ -12,12 +12,12 @@ import {
   SurveyMailPage,
   SurveyInfoPage,
   LinksBase,
+  StatsPage,
 } from 'pages';
 
 export const App = () => {
   return (
     <>
-      {/* <Header /> */}
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path={paths.home} element={<HomePage />} />
@@ -27,6 +27,7 @@ export const App = () => {
           <Route path={paths.surveyMail} element={<SurveyMailPage />} />
           <Route path={paths.surveyInfo} element={<SurveyInfoPage />} />
           <Route path={paths.linksBase} element={<LinksBase />} />
+          <Route path={paths.statsPage} element={<StatsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

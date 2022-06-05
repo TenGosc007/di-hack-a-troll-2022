@@ -7,7 +7,7 @@ export const survey = createApi({
   }),
   endpoints: (builder) => ({
     getSurveyId: builder.mutation({
-        query: (id) => `questions/lp/${id}`,
+      query: (id) => `questions/lp/${id}`,
     }),
   }),
 });
