@@ -4,6 +4,8 @@ const initialState = {
   url: null,
   categoryId: null,
   list: [],
+  fake: 0,
+  real: 0,
 };
 
 export const sentDataSlice = createSlice({
@@ -14,6 +16,12 @@ export const sentDataSlice = createSlice({
       state.url = payload.url;
       state.categoryId = payload.id;
       state.list = payload.list;
+    },
+    addFake: (state) => {
+      state.fake += 1;
+    },
+    addReal: (state) => {
+      state.real += 1;
     },
   },
 });
