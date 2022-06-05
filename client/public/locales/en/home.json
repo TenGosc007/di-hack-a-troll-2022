@@ -1,0 +1,23 @@
+{
+  "home": {
+    "header": "Nie daj sie dezinformacji",
+    "header!": "!",
+    "instruction": {
+      "header": "Jak to działa?",
+      "1": "1. Odpowiedz na losowo wybrane pytania dotyczące treści zamieszczonych w danym materiale",
+      "2": "2. Zweryfikuj swoją odpowiedź za pomocą maila",
+      "3": "3. Uzyskaj wynik"
+    },
+    "button1": "Sprawdź artykuł",
+    "button2": "Baza linków",
+    "headerFake": "FAKE NEWSY",
+    "contentFake": "Fake newsy nie są czymś nowym – towarzyszą człowiekowi, od kiedy nauczył się przekazywać informacje. Jednak to właśnie w dzisiejszym świecie, który charakteryzuje się błyskawicznym przepływem wiadomości, fałszywe informacje mają się lepiej niż kiedykolwiek wcześniej. Atakują nas niemalże z każdej strony. Trudno nie wpaść w ich pułapkę, a zdecydowanie jeszcze trudniej się z niej wydostać. Skala występowania tego problemu jest ogromna i tak naprawdę dotyczy każdego internauty.",
+    "headerEducation": "EDUKACJA",
+    "contentEducation": "Głównie poprzez edukację można nauczyć się, jak rozróżniać prawdę od kłamstwa. To właśnie dzięki temu będziemy mogli łatwiej bronić się przed kłamstwem. Warto patrzeć na treści zamieszczane w Internecie krytycznym okiem, sprawdzać je oraz weryfikować.",
+    "statHeader": "STATYSTYKI",
+    "statContent": "Nasza strona udostępnia szereg danych statystycznych, dzięki którym możesz przejrzeć prawdopodobieństwo występowania fake newsa na określonej stronie czy witrynie.",
+    "button3": "Statystyki",
+    "contactHeader": "Masz pytania?",
+    "contactContent": "Napisz do nas!"
+  }
+}
