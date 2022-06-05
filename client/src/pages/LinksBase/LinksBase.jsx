@@ -66,7 +66,7 @@ export const LinksBase = () => {
     const avg = sum / project.length || 0;
 
     if (avg >= 100) {
-      return 0;
+      return 0.5;
     }
     if (avg >= 90) {
       return 0.5;
