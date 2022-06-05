@@ -25,7 +25,16 @@ Celem projektu było dostarczenie aplikacji mającej na celu zbieranie odczuć u
 ## Działanie aplikacji
 
 ### Strona główna
-Na stronie głównej można znaleźć szczegółowe informacje dotyczące aplikacji. Po wejściu na stronę, użytkownikowi ukaże się grafika, hasło naszej aplikacji „Nie daj się dezinformacji”, instrukcja działania oraz dwa przyciski: „Sprawdź artykuł” (kliknięcie na niego spowoduje przeniesienie na stronę ankiety) oraz „Baza linków” (kliknięcie spowoduje przeniesienie na stronę ze zgłoszonymi linkami). Poniżej użytkownik może zapoznać się z krótką częścią informacyjną dotyczącą fake newsów oraz ze  statystykami. Stronę główną zwieńcza aktywny link umożliwiający komunikację użytkownika z twórcami aplikacji.
+Na stronie głównej można znaleźć szczegółowe informacje dotyczące aplikacji. Po wejściu na stronę, użytkownikowi ukaże się grafika, hasło naszej aplikacji „Nie daj się dezinformacji”, instrukcja działania oraz dwa przyciski: „Sprawdź artykuł” (kliknięcie na niego spowoduje przeniesienie na stronę ankiety) oraz „Baza linków” (kliknięcie spowoduje przeniesienie na stronę ze zgłoszonymi linkami). 
+
+![Zrzut ekranu 2022-06-05 o 04 52 37](https://user-images.githubusercontent.com/75137091/172032966-6388023c-60a9-43df-b537-f920ef998744.png)
+
+Poniżej użytkownik może zapoznać się z krótką częścią informacyjną dotyczącą fake newsów oraz ze  statystykami. Stronę główną zwieńcza aktywny link umożliwiający komunikację użytkownika z twórcami aplikacji.
+
+![Zrzut ekranu 2022-06-05 o 04 53 25](https://user-images.githubusercontent.com/75137091/172032974-90c6ed09-761b-4e51-a6aa-94e04012c71d.png)
+
+![Zrzut ekranu 2022-06-05 o 04 53 30](https://user-images.githubusercontent.com/75137091/172032977-7ed66a88-fb6c-48c4-8aaf-e46d77b0fa35.png)
+
 
 ### Ankieta
 Po kliknięciu w przycisk „Sprawdź artykuł”, użytkownik zostaje przeniesiony na stronę ankiety. Składa się ona z kilku części.
