@@ -17,7 +17,7 @@ Zespół pracował w ramach 24 godzinnego hackathonu „Hack-a-troll”. Zachęc
 
 [Design](https://www.figma.com/file/9G0LYdw8MBMfRCAU9AUXz3/dezinformacja?node-id=4%3A2)
 
-### [WEJDŹ NA STRONĘ]()
+### [WEJDŹ NA STRONĘ](https://di-hack-a-troll.netlify.app/)
 
 ## Cel projektu
 Celem projektu było dostarczenie aplikacji mającej na celu zbieranie odczuć użytkowników na temat prawdopodobieństwa braku wiarygodności treści znajdujących się w artykułach i innych materiałach, zamieszczonych w Internecie. Aplikacja ma również za zadanie przeprowadzanie analizy danych, po czym tworzenie na ich podstawie szczegółowych statystyk, do których wgląd ma każdy użytkownik. 
@@ -46,6 +46,8 @@ Na tej stronie użytkownik wprowadza link artykułu bądź materiału zamieszczo
 
 #### Pytania 
 Tutaj użytkownik może zauważyć losowo wybrane pytania dotyczące artykułu. Poniżej znajdują się trzy przyciski: „TAK”, „NIE WIEM” oraz „NIE”. Użytkownik powinien odpowiedzieć na 10 pytań zgodnie ze swoimi odczuciami. Dodatkowo, na dole znajduje się pasek postępu, podpowiadający na ile pytań użytkownik udzielił już odpowiedzi, a na ile jeszcze nie. 
+
+![Zrzut ekranu 2022-06-05 o 06 47 06](https://user-images.githubusercontent.com/75137091/172035499-af645430-9b80-4bbb-a686-62f3f74a0488.jpg)
 
 #### Weryfikacja
 Po udzieleniu odpowiedzi na wszystkie pytania, użytkownik zostaje przeniesiony na kolejną podstronę, na której musi wpisać swój adres mailowy. Jest to konieczne, aby zweryfikować czy użytkownik nie jest botem, a także czy użytkownik nie dodał wcześniej tego samego artykułu. Następnie zostaje przeniesiony na stronę informacyjną. 
