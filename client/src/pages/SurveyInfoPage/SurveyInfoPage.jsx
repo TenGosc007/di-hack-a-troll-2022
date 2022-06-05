@@ -31,7 +31,7 @@ export const SurveyInfoPage = () => {
         result: result,
       });
 
-      navigate(paths.surveyInfo);
+      navigate(paths.statsPage);
     } catch (err) {
       console.log(err);
     }
