@@ -62,7 +62,6 @@
     display: flex;
     gap: 5rem;
     padding: 4rem;
-    // margin: 2rem;
     margin-right: 6rem;
   }
 }
@@ -136,4 +135,16 @@
     padding: 1rem;
     align-self: flex-start;
   }
+}
+
+.arrowBlue {
+  position: absolute;
+  top: 95%;
+  left: 45%;
+}
+
+.arrowWhite {
+  position: absolute;
+  top: 195%;
+  left: 45%;
 }

@@ -7,6 +7,8 @@ import { Btn } from 'components';
 import graphic1 from '../../assets/images/1.png';
 import graphic2 from '../../assets/images/2.png';
 import graphic3 from '../../assets/images/3.png';
+import blue from '../../assets/icons/arrow_blue.png';
+import white from '../../assets/icons/arrow_white.png';
 
 export const HomePage = () => {
   const { t } = useTranslation(['home']);
@@ -33,9 +35,14 @@ export const HomePage = () => {
             <Btn children={t`home.button2`} onClick={() => navigate(paths.linksBase, { replace: true })} />
           </div>
         </div>
+        <a href="#one">
+          <div className={styles.arrowBlue}>
+            <img src={blue}></img>
+          </div>
+        </a>
       </section>
 
-      <section className={styles.container2}>
+      <section className={styles.container2} id="one">
         <div className={styles.container1__txt}>
           <div className={styles.container2__head}>{t`home.headerFake`}</div>
           <div className={styles.container2__txt}>{t`home.contentFake`}</div>
@@ -45,9 +52,14 @@ export const HomePage = () => {
         <div className={styles.container1__grap}>
           <img src={graphic2}></img>
         </div>
+        <a href="#two">
+          <div className={styles.arrowWhite}>
+            <img src={white}></img>
+          </div>
+        </a>
       </section>
 
-      <section className={styles.container3}>
+      <section className={styles.container3} id="two">
         <div className={styles.container3__all}>
           <div className={styles.container1__grap}>
             <img src={graphic3}></img>
