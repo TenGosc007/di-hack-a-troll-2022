@@ -9,7 +9,10 @@ export const articleApi = createApi({
     getAllArticles: builder.mutation({
       query: () => `api/articles`,
     }),
+    getArticle: builder.mutation({
+      query: (id) => `api/scores/articles/${id}`,
+    }),
   }),
 });
 
-export const { useGetAllArticlesMutation } = articleApi;
+export const { useGetAllArticlesMutation, useGetArticleMutation } = articleApi;

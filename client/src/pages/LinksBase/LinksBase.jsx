@@ -48,7 +48,7 @@ export const LinksBase = () => {
   }, [query]);
 
   const navigateToLinkData = () => {
-    navigate(paths.linkData);
+    navigate(paths.statsPage);
   };
 
   const filterSearch = () => {

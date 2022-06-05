@@ -67,7 +67,7 @@ export const HomePage = () => {
           <div className={styles.container1__txt}>
             <div className={styles.container3__header}>{t`home.statHeader`}</div>
             <div className={styles.container3__txt}>{t`home.statContent`}</div>
-            <Btn children={t`home.button3`} />
+            <Btn children={t`home.button3`} onClick={() => navigate(paths.linksBase, { replace: true })} />
           </div>
         </div>
         <div className={styles.container3__footer}>
