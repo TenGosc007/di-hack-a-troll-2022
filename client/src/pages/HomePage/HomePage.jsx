@@ -72,7 +72,7 @@ export const HomePage = () => {
         </div>
         <div className={styles.container3__footer}>
           <div className={styles.container3__txtfoot}>{t`home.contactHeader`}</div>
-          <div className={styles.container3__head}>{t`home.contactContent`}</div>
+          <a className={styles.container3__head} href="mailto:hack_a_troll@yahoo.com">{t`home.contactContent`}</a>
         </div>
       </section>
     </main>
