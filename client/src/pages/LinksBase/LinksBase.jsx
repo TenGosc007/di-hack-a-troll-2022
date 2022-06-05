@@ -1,6 +1,4 @@
-import { Layout } from 'components';
-import { LinkCard } from 'components';
-import { SearchBar } from 'components/SearchBar/SearchBar';
+import { Layout, LinkCard, SearchBar } from 'components';
 import { paths } from 'constants/paths';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
