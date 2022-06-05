@@ -30,10 +30,11 @@ export const SurveyInfoPage = () => {
         result: result,
       });
 
-      navigate(paths.statsPage);
+
     } catch (err) {
       console.log(err);
     }
+    navigate(paths.linkBase);
   };
 
   return (
@@ -56,7 +57,7 @@ export const SurveyInfoPage = () => {
             <Text children={t`survey4.notok.info`} />
             <div className={styles.container__buttons}>
               <Btn children={t`survey4.notok.button1`} onClick={() => navigate(paths.survey, { replace: true })} />
-              <Btn children={t`survey4.notok.button2`} onClick={hadleClickBtn} />
+              <Btn children={t`survey4.notok.button2`} onClick={() => navigate(paths.linksBase, { replace: true })} />
             </div>
           </div>
         </Layout>
