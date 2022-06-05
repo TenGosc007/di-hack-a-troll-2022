@@ -17,7 +17,7 @@ Zespół pracował w ramach 24 godzinnego hackathonu „Hack-a-troll”. Zachęc
 
 [Design](https://www.figma.com/file/9G0LYdw8MBMfRCAU9AUXz3/dezinformacja?node-id=4%3A2)
 
-### [WEJDŹ NA STRONĘ]()
+### [WEJDŹ NA STRONĘ](https://di-hack-a-troll.netlify.app/)
 
 ## Cel projektu
 Celem projektu było dostarczenie aplikacji mającej na celu zbieranie odczuć użytkowników na temat prawdopodobieństwa braku wiarygodności treści znajdujących się w artykułach i innych materiałach, zamieszczonych w Internecie. Aplikacja ma również za zadanie przeprowadzanie analizy danych, po czym tworzenie na ich podstawie szczegółowych statystyk, do których wgląd ma każdy użytkownik. 
@@ -42,18 +42,26 @@ Po kliknięciu w przycisk „Sprawdź artykuł”, użytkownik zostaje przeniesi
 #### Wprowadzenie linka oraz wybór kategorii
 Na tej stronie użytkownik wprowadza link artykułu bądź materiału zamieszczonego w Internecie, który chciałby sprawdzić. Poniżej znajdują się przyciski z kategoriami. Zadaniem użytkownika jest wybranie odpowiedniej / odpowiednich kategorii. Kliknięcie na jakąkolwiek z nich spowoduje dodanie zielonego obramowania. Niżej znajduje się przycisk „Rozpocznij ankietę”, który przenosi użytkownika na kolejną podstronę.
 
-![Zrzut ekranu 2022-06-05 o 06 03 46](https://user-images.githubusercontent.com/75137091/172034574-349e1c02-8c6b-4ed6-b011-2a5c11a813a8.jpg)
+![Zrzut ekranu 2022-06-05 o 06 04 01](https://user-images.githubusercontent.com/75137091/172035048-9884ddf3-3316-4b6e-911d-55d743e99284.jpg)
 
 #### Pytania 
 Tutaj użytkownik może zauważyć losowo wybrane pytania dotyczące artykułu. Poniżej znajdują się trzy przyciski: „TAK”, „NIE WIEM” oraz „NIE”. Użytkownik powinien odpowiedzieć na 10 pytań zgodnie ze swoimi odczuciami. Dodatkowo, na dole znajduje się pasek postępu, podpowiadający na ile pytań użytkownik udzielił już odpowiedzi, a na ile jeszcze nie. 
 
+![Zrzut ekranu 2022-06-05 o 06 47 06](https://user-images.githubusercontent.com/75137091/172035499-af645430-9b80-4bbb-a686-62f3f74a0488.jpg)
+
 #### Weryfikacja
 Po udzieleniu odpowiedzi na wszystkie pytania, użytkownik zostaje przeniesiony na kolejną podstronę, na której musi wpisać swój adres mailowy. Jest to konieczne, aby zweryfikować czy użytkownik nie jest botem, a także czy użytkownik nie dodał wcześniej tego samego artykułu. Następnie zostaje przeniesiony na stronę informacyjną. 
+
+![Zrzut ekranu 2022-06-05 o 06 03 46](https://user-images.githubusercontent.com/75137091/172034574-349e1c02-8c6b-4ed6-b011-2a5c11a813a8.jpg)
 
 #### Strona informacyjna
 W przypadku, gdy użytkownik po raz pierwszy dodał dany artykuł oraz swoje odczucia na temat jego prawdopodobieństwa, wówczas wklejony przez niego link, odpowiedzi i wynik zostają zapisane do bazy, a jego oczom ukazuje się podziękowanie za zgłoszenie.
 
-Jeśli jednak użytkownik dodał ten sam artykuł ponownie, wówczas zostaje o tym poinformowany. Niżej znajdują się dwa przyciski: „Dodaj inny artykuł” (kliknięcie spowoduje przeniesienie na pierwszą cześć strony ankiety) oraz „Podmień ankietę” (kliknięcie spowoduje zamianę wyniku ze starego na nowy). 
+![Zrzut ekranu 2022-06-05 o 06 38 53](https://user-images.githubusercontent.com/75137091/172035268-afdc258f-270b-44dc-8ddf-a6279d4a83dc.jpg)
+
+Jeśli jednak użytkownik dodał ten sam artykuł ponownie, wówczas zostaje o tym poinformowany. Niżej znajdują się dwa przyciski: „Dodaj inny artykuł” (kliknięcie spowoduje przeniesienie na pierwszą część strony ankiety) oraz „Podmień ankietę” (kliknięcie spowoduje zamianę wyniku ze starego na nowy). 
+
+![Zrzut ekranu 2022-06-05 o 06 31 01](https://user-images.githubusercontent.com/75137091/172035109-2c6d4f8c-72b5-44bb-b375-72b0f5d081f3.jpg)
 
 ### Baza artykułów
 Na niniejszej stronie użytkownik może przejrzeć dodane do bazy artykuły. U góry znajdują się pola „Szukaj” oraz „Sortuj”, z kolei nieco niżej – dodane przez użytkowników linki. Każdy link posiada kategorie oraz wynik, pokazujący prawdopodobieństwo autentyczności danego materiału. Im mniej zadowolona emoji, tym prawdopodobieństwo fejka jest wyższe. 
