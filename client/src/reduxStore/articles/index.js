@@ -26,7 +26,7 @@ export const sentDataSlice = createSlice({
   },
 });
 
-export const { setCategory } = sentDataSlice.actions;
+export const { setCategory, addFake, addReal } = sentDataSlice.actions;
 
 export const selectUrl = (state) => state.sentData.url;
 
