@@ -16,8 +16,8 @@ import styles from './linksBase.module.scss';
 
 export const LinksBase = () => {
   const [getlinks] = useGetAllArticlesMutation();
-  const [data, setData] = useState([]);
-  // const [data, setData] = useGetAllArticlesMutation();
+  const [linkdata, setData] = useState([]);
+
   const [sortType, setSortType] = useState();
   const [query, setQuery] = useState('');
 
@@ -27,51 +27,46 @@ export const LinksBase = () => {
 
   const getLinksData = useCallback(async () => {
     const res = await getlinks();
-    console.log(res.data);
-    // if (res.data) {
-    // links(
-    //   objectMapArray(res.data, (val, key) => (
-    //     <Btn key={key} children={val.name} outline onClick={() => setChooseCategory(val)} />
-    //   ))
-    // );
-    // }
+    if (res.data) {
+      setData(res.data);
+    }
   }, []);
 
   useEffect(() => {
     getLinksData();
   }, [getLinksData]);
 
-  // useEffect(() => {
-  //   const sortArray = (type) => {
-  //     const types = {
-  //       max: 'results',
-  //       min: 'results',
-  //     };
-  //     const sortProperty = types[type];
-  //     let sorted;
-  //     if (sortType === 'max') sorted = [...links].sort((a, b) => a[sortProperty] - b[sortProperty]);
-  //     else sorted = [...links].sort((a, b) => b[sortProperty] - a[sortProperty]);
-  //     setData(sorted);
-  //   };
-  //   sortArray(sortType);
-  // }, [sortType]);
+  useEffect(() => {
+    const sortArray = (type) => {
+      const types = {
+        max: 'results',
+        min: 'results',
+      };
+      const sortProperty = types[type];
+      let sorted;
+      if (sortType === 'max') sorted = [...linkdata].sort((a, b) => a[sortProperty] - b[sortProperty]);
+      else sorted = [...linkdata].sort((a, b) => b[sortProperty] - a[sortProperty]);
+      setData(sorted);
+    };
+    sortArray(sortType);
+  }, [sortType]);
 
-  // useEffect(() => {
-  //   filterSearch();
-  // }, [query]);
+  useEffect(() => {
+    filterSearch();
+  }, [query]);
 
   const navigateToLinkData = () => {
     navigate(paths.linkData);
   };
 
-  // const filterSearch = () => {
-  //   if (query.length > 0) {
-  //     let newSearch = [...links].filter((link) => mainSearchRegex.test(link.link));
-  //     setData(newSearch);
-  //   } else if (query.length === 0) {
-  //     setData([...links]);
-  //   }
-  // };
+  const filterSearch = () => {
+    if (query.length > 0) {
+      let newSearch = [...linkdata].filter((link) => mainSearchRegex.test(link.link));
+      setData(newSearch);
+    } else if (query.length === 0) {
+      setData([...linkdata]);
+    }
+  };
 
   return (
     <Layout>
@@ -93,7 +88,7 @@ export const LinksBase = () => {
           <p>Fejk</p>
         </div>
 
-        {data.map((project) => (
+        {linkdata.map((project) => (
           <div key={project.id}>
             <LinkCard
               score={project.results}
