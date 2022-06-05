@@ -29,8 +29,6 @@ export const SurveyInfoPage = () => {
         category: categoryId,
         result: result,
       });
-
-
     } catch (err) {
       console.log(err);
     }
