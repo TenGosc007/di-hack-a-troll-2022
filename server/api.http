@@ -138,10 +138,7 @@ Content-Type: application/json
 # DELETE USER
 DELETE http://localhost:5000/api/users/629b89b298ed1592d5463ce5 HTTP/1.1
 
-
-
-
-
-
-
-
+#________________________________ SCORES ________________________________
+###
+# GET ARTICLE SCORES
+GET http://localhost:5000/api/scores/629c0279b0ed0506f68237dc HTTP/1.1
