@@ -23,7 +23,8 @@
   "survey3": {
     "mailLabel": "Podaj swojego maila:",
     "mailPlaceholder": "Tu wpisz e-mail",
-    "button": "Zatwierdź podany link"
+    "button": "Zatwierdź podany link",
+    "footer": "Podanie maila jest wymagane, aby zweryfikować czy nie jesteś botem. Na podanego maila zostanie wysłane potwierdzenie dodania podejrzanego artykułu."
   },
   "survey4": {
     "ok": {

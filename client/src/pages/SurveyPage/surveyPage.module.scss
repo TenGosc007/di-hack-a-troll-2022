@@ -1,10 +1,22 @@
 .survey {
+  height: 80vh;
+  width: 95rem;
+  position: relative;
+  margin: auto;
+  padding: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.progress {
+  padding: 5rem;
+  width: 95rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  margin: 0 auto;
-  height: 60vh;
+  gap: 1rem;
 }
 
 ul {
@@ -14,5 +26,5 @@ ul {
 }
 
 .btn {
-  margin: 10px;
+  margin: 3rem;
 }
