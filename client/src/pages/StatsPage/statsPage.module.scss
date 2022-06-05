@@ -4,4 +4,10 @@
   justify-content: center;
   flex-direction: column;
   width: 95rem;
+
+  &__text {
+    line-height: 3rem;
+    align-self: flex-start;
+    padding: 2rem 0 0 4rem;
+  }
 }

@@ -12,7 +12,7 @@ import {
   SurveyMailPage,
   SurveyInfoPage,
   LinksBase,
-  StatsPage
+  StatsPage,
 } from 'pages';
 
 export const App = () => {

@@ -8,8 +8,8 @@ export const StatsPage = () => {
     <Layout>
       <div className={styles.container}>
         <Text green>Statystyki dodanej strony</Text>
-        <div>Tytuł:</div>
-        <div>URL:</div>
+        <div className={styles.container__text}>Tytuł:</div>
+        <div className={styles.container__text}>URL:</div>
       </div>
     </Layout>
   );
