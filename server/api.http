@@ -146,3 +146,7 @@ GET http://localhost:5000/api/scores/articles/629c0279b0ed0506f68237dc HTTP/1.1
 ###
 # GET SITES SCORES
 GET http://localhost:5000/api/scores/sites/629c0279b0ed0506f68237df HTTP/1.1
+
+###
+# GET SITES GOLOBAL
+GET http://localhost:5000/api/scores/global HTTP/1.1
