@@ -6,13 +6,6 @@ import { useGetAllArticlesMutation } from 'reduxStore/services/articles';
 
 import styles from './linksBase.module.scss';
 
-// const links = [
-//   { url: 'www.facebook.com', categories: 'CELEBRYCI', results: 1.5 },
-//   { url: 'www.facebook.com/fake', categories: 'ŚWIAT', results: 2.5 },
-//   { url: 'www.facebook.com/fake-nesy', categories: 'ZWIERZĘTA', results: 5 },
-//   { url: 'www.facebook.com/fake-nesy', categories: 'ZWIERZĘTA', results: 4 },
-// ];
-
 export const LinksBase = () => {
   const [getlinks] = useGetAllArticlesMutation();
   const [linkdata, setData] = useState([]);
