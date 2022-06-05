@@ -32,8 +32,6 @@ export const SurveyPage = () => {
     }
   };
 
-  // console.log('lp end', lp);
-
   const getActiveQuestion = useCallback(async () => {
     setActiveQuestion({});
     if (lp < maxLength) {
