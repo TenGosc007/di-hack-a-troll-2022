@@ -45,7 +45,7 @@ export const SurveyInfoPage = () => {
             <Text children={t`survey4.ok.info`} />
             <div className={styles.container__buttons}>
               <Btn children={t`survey4.ok.button1`} onClick={() => navigate(paths.survey, { replace: true })} />
-              <Btn children={t`survey4.ok.button2`} />
+              <Btn children={t`survey4.ok.button2`} onClick={() => navigate(paths.linksBase, { replace: true })} />
             </div>
           </div>
         </Layout>
