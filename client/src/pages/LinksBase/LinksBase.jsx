@@ -58,6 +58,7 @@ export const LinksBase = () => {
       setData(newSearch);
     } else if (query.length === 0) {
       setData([...linkdata]);
+      console.log(linkdata);
     }
   };
 
@@ -100,6 +101,7 @@ export const LinksBase = () => {
     }
   };
 
+<<<<<<< HEAD
   const mapCategories = (categories) => {
     let unique = [...new Set(categories.map((a) => a.name))];
 
@@ -110,6 +112,13 @@ export const LinksBase = () => {
         ))}
       </div>
     );
+=======
+  const categories = ['KULTURA', 'NAUKA', 'SPORT', 'DZIECI', 'CELEBRYCI', 'POLITYKA', 'INNE', 'ŚWIAT', 'ZWIERZĘTA'];
+
+  const rnNumber = () => {
+    const num = Math.floor(Math.random() * 9);
+    return categories[num];
+>>>>>>> afd3d699a7b247900dc52096a5d561189b7b8957
   };
 
   return (
@@ -137,8 +146,13 @@ export const LinksBase = () => {
             <LinkCard
               score={resultsScale(project.results)}
               fakelink={project.url}
+<<<<<<< HEAD
               categories={mapCategories(project.categories)}
               onClick={navigateToStatsPage}
+=======
+              categories={rnNumber()}
+              onClick={navigateToLinkData}
+>>>>>>> afd3d699a7b247900dc52096a5d561189b7b8957
             />
           </div>
         ))}

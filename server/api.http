@@ -32,7 +32,7 @@ GET http://localhost:5000/api/categories HTTP/1.1
 
 ###
 # GET CATEGORY
-GET http://localhost:5000/api/categories/629b40bb6ce2f93969611e49 HTTP/1.1
+GET http://localhost:5000/api/categories/629ba7b9f0f7357914b9f628 HTTP/1.1
 
 ###
 # CREATE CATEGORY
@@ -46,7 +46,7 @@ Content-Type: application/json
 
 ###
 # DELETE CATEGORY
-DELETE http://localhost:5000/api/categories/629bd32dc804f7f14b7db957 HTTP/1.1
+DELETE http://localhost:5000/api/categories/629e465b95df51a1ee483a2a HTTP/1.1
 
 #________________________________ TAGS ________________________________
 ###
@@ -64,12 +64,16 @@ Content-Type: application/json
 
 ###
 # DELETE TAG
-DELETE http://localhost:5000/api/tags/629b6493a47a1f222017cb3d HTTP/1.1
+DELETE http://localhost:5000/api/tags/629e465b95df51a1ee483a2a HTTP/1.1
 
 #________________________________ ARTICLES ________________________________
 ###
 # GET ALL ARTICLES
 GET http://localhost:5000/api/articles HTTP/1.1
+
+###
+# GET ARTICLE
+GET http://localhost:5000/api/articles/629c0279b0ed0506f68237dc HTTP/1.1
 
 ###
 # CREATE ARTICLE
@@ -88,6 +92,10 @@ DELETE http://localhost:5000/api/articles/629b6eabda93832480888cd5 HTTP/1.1
 ###
 # GET ALL SITES
 GET http://localhost:5000/api/sites HTTP/1.1
+
+###
+# GET SITE
+GET http://localhost:5000/api/sites/629c0279b0ed0506f68237df HTTP/1.1
 
 ###
 # CREATE SITE
