@@ -36,8 +36,9 @@ export const LinksBase = () => {
       };
       const sortProperty = types[type];
       let sorted;
-      if (sortType === 'max') sorted = [...linkdata].sort((a, b) => a[sortProperty] - b[sortProperty]);
-      else sorted = [...linkdata].sort((a, b) => b[sortProperty] - a[sortProperty]);
+      if (sortType === 'max')
+        sorted = [...linkdata].sort((a, b) => (b[sortProperty] - a[sortProperty]) / sortProperty.length);
+      else sorted = [...linkdata].sort((a, b) => (a[sortProperty] - b[sortProperty]) / sortProperty.length);
       setData(sorted);
     };
     sortArray(sortType);
@@ -47,19 +48,21 @@ export const LinksBase = () => {
     filterSearch();
   }, [query]);
 
-  const navigateToLinkData = () => {
-    navigate(paths.linkData);
+  const navigateToStatsPage = () => {
+    navigate(paths.statsPage);
   };
 
   const filterSearch = () => {
     if (query.length > 0) {
-      let newSearch = [...linkdata].filter((link) => mainSearchRegex.test(link.link));
+      let newSearch = [...linkdata].filter((link) => mainSearchRegex.test(link.url));
       setData(newSearch);
     } else if (query.length === 0) {
       setData([...linkdata]);
-      console.log(linkdata);
+      // console.log(linkdata);
     }
   };
+
+  // console.log(linkdata);
 
   const resultsScale = (project) => {
     const sum = project.reduce((a, b) => a + b, 0);
@@ -107,6 +110,18 @@ export const LinksBase = () => {
     return categories[num];
   };
 
+  const mapCategories = (categories) => {
+    let unique = [...new Set(categories.map((a) => a.name))];
+
+    return (
+      <div>
+        {unique.map((a) => (
+          <span>{a}, </span>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <Layout>
       <div className={styles.linksBase}>
@@ -132,8 +147,14 @@ export const LinksBase = () => {
             <LinkCard
               score={resultsScale(project.results)}
               fakelink={project.url}
-              categories={rnNumber()}
-              onClick={navigateToLinkData}
+              // categories={project.categories.map((a) => (
+              //   <p>{a.name}</p>
+              // ))}
+              categories={mapCategories(project.categories)}
+              // categories={project.categories.array.forEach((element) => {
+              //   return element.name;
+              // })}
+              onClick={navigateToStatsPage}
             />
           </div>
         ))}

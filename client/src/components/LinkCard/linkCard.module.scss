@@ -2,7 +2,7 @@
 
 .linkBase {
   display: grid;
-  grid-template-columns: auto 25rem 16rem;
+  grid-template-columns: auto 15vw 16rem;
   //TODO zmienić wartość szerokości
   width: 80%;
   border: solid 0.2rem $c-silver;
@@ -13,6 +13,20 @@
   margin-top: 2rem;
   background: none;
   cursor: pointer;
+
+  .text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 35vw;
+  }
+
+  .textcat {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 15vw;
+  }
 
   &:hover,
   &:focus-visible {
