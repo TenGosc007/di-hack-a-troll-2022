@@ -58,11 +58,8 @@ export const LinksBase = () => {
       setData(newSearch);
     } else if (query.length === 0) {
       setData([...linkdata]);
-      // console.log(linkdata);
     }
   };
-
-  // console.log(linkdata);
 
   const resultsScale = (project) => {
     const sum = project.reduce((a, b) => a + b, 0);
@@ -103,13 +100,6 @@ export const LinksBase = () => {
     }
   };
 
-  const categories = ['KULTURA', 'NAUKA', 'SPORT', 'DZIECI', 'CELEBRYCI', 'POLITYKA', 'INNE', 'ŚWIAT', 'ZWIERZĘTA'];
-
-  const rnNumber = () => {
-    const num = Math.floor(Math.random() * 9);
-    return categories[num];
-  };
-
   const mapCategories = (categories) => {
     let unique = [...new Set(categories.map((a) => a.name))];
 
@@ -147,13 +137,7 @@ export const LinksBase = () => {
             <LinkCard
               score={resultsScale(project.results)}
               fakelink={project.url}
-              // categories={project.categories.map((a) => (
-              //   <p>{a.name}</p>
-              // ))}
               categories={mapCategories(project.categories)}
-              // categories={project.categories.array.forEach((element) => {
-              //   return element.name;
-              // })}
               onClick={navigateToStatsPage}
             />
           </div>
