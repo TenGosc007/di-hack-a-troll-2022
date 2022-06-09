@@ -36,8 +36,9 @@ export const LinksBase = () => {
       };
       const sortProperty = types[type];
       let sorted;
-      if (sortType === 'max') sorted = [...linkdata].sort((a, b) => a[sortProperty] - b[sortProperty]);
-      else sorted = [...linkdata].sort((a, b) => b[sortProperty] - a[sortProperty]);
+      if (sortType === 'max')
+        sorted = [...linkdata].sort((a, b) => (b[sortProperty] - a[sortProperty]) / sortProperty.length);
+      else sorted = [...linkdata].sort((a, b) => (a[sortProperty] - b[sortProperty]) / sortProperty.length);
       setData(sorted);
     };
     sortArray(sortType);
@@ -47,13 +48,13 @@ export const LinksBase = () => {
     filterSearch();
   }, [query]);
 
-  const navigateToLinkData = () => {
+  const navigateToStatsPage = () => {
     navigate(paths.statsPage);
   };
 
   const filterSearch = () => {
     if (query.length > 0) {
-      let newSearch = [...linkdata].filter((link) => mainSearchRegex.test(link.link));
+      let newSearch = [...linkdata].filter((link) => mainSearchRegex.test(link.url));
       setData(newSearch);
     } else if (query.length === 0) {
       setData([...linkdata]);
@@ -100,11 +101,16 @@ export const LinksBase = () => {
     }
   };
 
-  const categories = ['KULTURA', 'NAUKA', 'SPORT', 'DZIECI', 'CELEBRYCI', 'POLITYKA', 'INNE', 'ŚWIAT', 'ZWIERZĘTA'];
+  const mapCategories = (categories) => {
+    let unique = [...new Set(categories.map((a) => a.name))];
 
-  const rnNumber = () => {
-    const num = Math.floor(Math.random() * 9);
-    return categories[num];
+    return (
+      <div>
+        {unique.map((a) => (
+          <span>{a}, </span>
+        ))}
+      </div>
+    );
   };
 
   return (
@@ -132,8 +138,8 @@ export const LinksBase = () => {
             <LinkCard
               score={resultsScale(project.results)}
               fakelink={project.url}
-              categories={rnNumber()}
-              onClick={navigateToLinkData}
+              categories={mapCategories(project.categories)}
+              onClick={navigateToStatsPage}
             />
           </div>
         ))}
