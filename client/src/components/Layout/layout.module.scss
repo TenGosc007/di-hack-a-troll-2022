@@ -23,6 +23,7 @@
 
       @include respond(tab-port) {
         flex: 1 0 100%;
+        padding-top: 5rem;
       }
 
       .content {
