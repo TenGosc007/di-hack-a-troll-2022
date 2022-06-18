@@ -1,12 +1,17 @@
 @import 'style/global';
 
 .layout {
-  @include page-base;
   display: flex;
+
+  @include respond(tab-port) {
+    max-width: 100vw;
+    overflow: hidden;
+  }
 
   .container {
     display: flex;
     transition: 0.3s ease;
+    width: 100%;
 
     @include respond(tab-port) {
       transform: translateX(-$w-sidebar-tab);
@@ -14,14 +19,18 @@
 
     .right {
       position: relative;
+      width: inherit;
 
       @include respond(tab-port) {
         flex: 1 0 100%;
-        padding-top: 2rem;
       }
 
       .content {
-        padding: 4rem;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
 
       .btn {
@@ -30,6 +39,7 @@
         left: 0;
         transform: translate(30%, 50%);
         display: none;
+        color: $c-darkblue;
 
         @include respond(tab-port) {
           display: block;

@@ -2,7 +2,6 @@
 
 .home {
   @include page-base;
-  height: 300vh;
 }
 
 .container1 {
@@ -12,10 +11,19 @@
   grid-template-columns: repeat(2, 1fr);
   padding: 7rem;
 
+  @include respond(tab-port) {
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+
   &__all {
     padding-left: 3rem;
     display: flex;
     align-items: center;
+
+    @include respond(tab-port) {
+      padding-left: 1em;
+    }
   }
 
   &__head {
@@ -23,11 +31,21 @@
     color: $c-green;
     font-size: 6rem;
     width: 65%;
+
+    @include respond(tab-port) {
+      font-size: 5rem;
+      width: 80%;
+    }
   }
+
   &__headw {
     font-family: 'Permanent Marker', cursive;
     color: $c-green;
     font-size: 20rem;
+
+    @include respond(tab-port) {
+      font-size: 14rem;
+    }
   }
 
   &__grap {
@@ -35,6 +53,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    @include respond(tab-port) {
+      display: none;
+    }
   }
 
   &__txt {
@@ -42,14 +64,24 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    @include respond(tab-port) {
+      width: 100vw;
+    }
   }
 
   &__instr {
     width: 80%;
-    color: #000000;
+    color: $c-black;
     line-height: 3rem;
     padding: 1rem;
     margin-right: 8rem;
+
+    @include respond(tab-port) {
+      margin-right: 2rem;
+      text-align: left;
+      padding: 0;
+    }
   }
 
   &__instrText {
@@ -57,6 +89,11 @@
     padding: 3rem;
     margin-left: 1rem;
     font-size: 3rem;
+
+    @include respond(tab-port) {
+      margin-left: 0rem;
+      text-align: justify;
+    }
   }
 
   &__btns {
@@ -64,6 +101,14 @@
     gap: 5rem;
     padding: 4rem;
     margin-right: 6rem;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0;
+      margin-top: 3em;
+    }
   }
 }
 
@@ -74,6 +119,11 @@
   grid-template-columns: repeat(2, 1fr);
   padding: 7rem;
 
+  @include respond(tab-port) {
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+
   &__head {
     font-family: 'Permanent Marker', cursive;
     color: $c-green;
@@ -81,14 +131,28 @@
     padding: 2rem;
     align-self: flex-start;
     margin-left: 8rem;
+
+    @include respond(tab-port) {
+      margin-left: 0;
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__txt {
-    color: #ffffff;
+    color: $c-white;
     line-height: 3rem;
     width: 90%;
     margin-bottom: 1rem;
     margin-left: 12rem;
+
+    @include respond(tab-port) {
+      padding: 0;
+      grid-template-columns: 1fr;
+      margin-left: 0;
+      text-align: justify;
+      margin-bottom: 3rem;
+    }
   }
 }
 
@@ -110,6 +174,13 @@
     align-self: flex-start;
     margin-bottom: 2rem;
     margin-left: 5rem;
+
+    @include respond(tab-port) {
+      margin-left: 0;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 3rem;
+    }
   }
 
   &__txt {
@@ -118,6 +189,15 @@
     width: 80%;
     margin-right: 4rem;
     padding-bottom: 3rem;
+
+    @include respond(tab-port) {
+      margin: 0;
+      padding: 2em 3em;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 3rem;
+      text-align: justify;
+    }
   }
 
   &__footer {
@@ -142,11 +222,13 @@
 .arrowBlue {
   position: absolute;
   top: 95%;
-  left: 45%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .arrowWhite {
   position: absolute;
   top: 195%;
-  left: 45%;
+  left: 50%;
+  transform: translateX(-50%);
 }

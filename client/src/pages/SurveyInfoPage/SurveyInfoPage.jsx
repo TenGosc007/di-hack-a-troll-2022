@@ -7,9 +7,7 @@ import { paths } from 'constants/paths';
 import styles from './surveyInfoPage.module.scss';
 import { selectSuccess } from 'reduxStore/articles';
 import { selectResult } from 'reduxStore/articles';
-// import { selectCategoryId, selectEmail, selectResult, selectSuccess, selectUrl } from 'reduxStore/articles';
 import { Text, Btn, Layout } from 'components';
-// import { useUpdateEmailMutation } from 'reduxStore/services/user';
 
 import { ReactComponent as SadIcon } from 'assets/icons/sad.svg';
 import { ReactComponent as SmileIcon } from 'assets/icons/smile.svg';
@@ -17,28 +15,8 @@ import { ReactComponent as SmileIcon } from 'assets/icons/smile.svg';
 export const SurveyInfoPage = () => {
   const { t } = useTranslation(['survey']);
   const navigate = useNavigate();
-  // const [sentEmail] = useUpdateEmailMutation();
   const isSuccess = useSelector(selectSuccess);
-  // const url = useSelector(selectUrl);
-  // const categoryId = useSelector(selectCategoryId);
   const result = useSelector(selectResult);
-  // const myEmail = useSelector(selectEmail);
-
-  // const hadleClickBtn = async () => {
-  //   console.log(myEmail, result, url, categoryId);
-
-  //   try {
-  //     await sentEmail({
-  //       email: myEmail,
-  //       url: url,
-  //       category: categoryId,
-  //       result: result,
-  //     });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  //   navigate(paths.linkBase);
-  // };
 
   return (
     <>

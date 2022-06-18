@@ -1,7 +1,6 @@
 // keep alphabetical order
 
 export * from './Btn';
-export * from './Counter';
 export * from './Footer';
 export * from './Header';
 export * from './Layout';

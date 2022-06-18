@@ -3,8 +3,8 @@ import clsx from 'clsx';
 
 import styles from './btn.module.scss';
 
-export const Btn = ({ children, className, outline, ...rest }) => {
-  const buttonStyle = clsx(styles.button, className, { [styles.outline]: outline });
+export const Btn = ({ children, className, outline, active, ...rest }) => {
+  const buttonStyle = clsx(styles.button, className, { [styles.outline]: outline, [styles.active]: active });
 
   return (
     <button className={buttonStyle} {...rest}>

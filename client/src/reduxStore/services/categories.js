@@ -6,10 +6,13 @@ export const categories = createApi({
     baseUrl: 'https://server-di-hack-a-troll-2022.vercel.app/',
   }),
   endpoints: (builder) => ({
-    getCategories: builder.mutation({
+    getCategories: builder.query({
       query: () => `api/categories`,
+    }),
+    getCategory: builder.query({
+      query: (id) => `api/categories/${id}`,
     }),
   }),
 });
 
-export const { useGetCategoriesMutation } = categories;
+export const { useGetCategoriesQuery, useGetCategoryQuery } = categories;

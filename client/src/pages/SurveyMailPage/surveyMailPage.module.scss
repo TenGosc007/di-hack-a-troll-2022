@@ -1,12 +1,6 @@
 @import 'style/global';
 
 .container {
-  @include page-base;
-
-  width: 90rem;
-  position: relative;
-  margin: auto;
-  padding: 15rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,8 +11,10 @@
   }
 
   &__footer {
-    width: 95rem;
+    max-width: 95rem;
     text-align: center;
+    transform: translateY(100%);
+    padding: 0 1rem;
   }
 }
 

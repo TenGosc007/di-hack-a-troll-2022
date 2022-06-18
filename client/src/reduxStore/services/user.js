@@ -5,14 +5,7 @@ export const api = createApi({
     baseUrl: 'https://server-di-hack-a-troll-2022.vercel.app/',
   }),
   endpoints: (builder) => ({
-    login: builder.mutation({
-      query: (credentials) => ({
-        url: 'login',
-        method: 'POST',
-        body: credentials,
-      }),
-    }),
-    getUserData: builder.mutation({
+    getUserData: builder.query({
       query: (id) => `users/${id}`,
     }),
     sentEmail: builder.mutation({
@@ -32,4 +25,4 @@ export const api = createApi({
   }),
 });
 
-export const { useLoginMutation, useGetUserDataMutation, useSentEmailMutation, useUpdateEmailMutation } = api;
+export const { useGetUserDataQuery, useSentEmailMutation, useUpdateEmailMutation } = api;

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import Hamburger from 'hamburger-react';
 import clsx from 'clsx';
 
 import styles from './layout.module.scss';
@@ -9,8 +10,6 @@ export const Layout = ({ children }) => {
   const [showSidebar, setShowSidebar] = useState(false);
   const containerStyle = clsx(styles.container, { [styles.show]: showSidebar });
 
-  const onSidebarToggle = () => setShowSidebar((prev) => !prev);
-
   return (
     <main className={styles.layout}>
       <div className={containerStyle}>
@@ -18,9 +17,9 @@ export const Layout = ({ children }) => {
 
         <div className={styles.right}>
           <section className={styles.content}>{children}</section>
-          <button className={styles.btn} onClick={onSidebarToggle}>
-            hide
-          </button>
+          <div className={styles.btn}>
+            <Hamburger toggled={showSidebar} toggle={setShowSidebar} direction="right" size={30} />
+          </div>
         </div>
       </div>
     </main>

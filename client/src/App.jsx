@@ -4,7 +4,6 @@ import { Route, Routes } from 'react-router-dom';
 import { paths } from 'constants/paths';
 import { Loader } from 'components';
 import {
-  AboutPage,
   HomePage,
   NotFoundPage,
   SurveyIntroPage,
@@ -17,20 +16,17 @@ import {
 
 export const App = () => {
   return (
-    <>
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path={paths.home} element={<HomePage />} />
-          <Route path={paths.about} element={<AboutPage />} />
-          <Route path={paths.survey} element={<SurveyIntroPage />} />
-          <Route path={paths.surveyQuestions} element={<SurveyPage />} />
-          <Route path={paths.surveyMail} element={<SurveyMailPage />} />
-          <Route path={paths.surveyInfo} element={<SurveyInfoPage />} />
-          <Route path={paths.linksBase} element={<LinksBase />} />
-          <Route path={paths.statsPage} element={<StatsPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </Suspense>
-    </>
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route path={paths.home} element={<HomePage />} />
+        <Route path={paths.survey} element={<SurveyIntroPage />} />
+        <Route path={paths.surveyQuestions} element={<SurveyPage />} />
+        <Route path={paths.surveyMail} element={<SurveyMailPage />} />
+        <Route path={paths.surveyInfo} element={<SurveyInfoPage />} />
+        <Route path={paths.linksBase} element={<LinksBase />} />
+        <Route path={paths.statsPage} element={<StatsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Suspense>
   );
 };
