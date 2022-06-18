@@ -1,5 +1,3 @@
-import React, { useState, useCallback, useEffect } from 'react';
-
 import { Layout, Text } from 'components';
 import styles from './statsPage.module.scss';
 import { useGetArticleQuery } from 'reduxStore/services/articles';

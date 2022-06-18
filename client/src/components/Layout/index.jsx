@@ -10,8 +10,6 @@ export const Layout = ({ children }) => {
   const [showSidebar, setShowSidebar] = useState(false);
   const containerStyle = clsx(styles.container, { [styles.show]: showSidebar });
 
-  const onSidebarToggle = () => setShowSidebar((prev) => !prev);
-
   return (
     <main className={styles.layout}>
       <div className={containerStyle}>
