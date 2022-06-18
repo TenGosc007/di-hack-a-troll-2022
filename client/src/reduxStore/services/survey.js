@@ -6,10 +6,10 @@ export const survey = createApi({
     baseUrl: 'https://server-di-hack-a-troll-2022.vercel.app/api/',
   }),
   endpoints: (builder) => ({
-    getSurveyId: builder.mutation({
+    getSurveyId: builder.query({
       query: (id) => `questions/lp/${id}`,
     }),
   }),
 });
 
-export const { useGetSurveyIdMutation } = survey;
+export const { useGetSurveyIdQuery } = survey;

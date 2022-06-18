@@ -1,6 +1,8 @@
+@import 'style/global';
+
 .survey {
   height: 80vh;
-  width: 95rem;
+  max-width: 95rem;
   position: relative;
   margin: auto;
   padding: 15rem;
@@ -8,11 +10,35 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @include respond(tab-port) {
+    padding: 0;
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+
+      button {
+        margin: 2rem;
+        width: 20rem;
+        height: 6rem;
+      }
+    }
+  }
+
+  .question {
+    min-height: 15rem;
+    width: 100%;
+
+    @include respond(tab-port) {
+      text-align: center;
+    }
+  }
 }
 
 .progress {
   padding: 5rem;
-  width: 95rem;
+  width: clamp(50vw, 100%, 95rem);
   display: flex;
   flex-direction: column;
   align-items: center;

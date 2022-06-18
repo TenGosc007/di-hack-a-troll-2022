@@ -6,13 +6,13 @@ export const articleApi = createApi({
     baseUrl: 'https://server-di-hack-a-troll-2022.vercel.app/',
   }),
   endpoints: (builder) => ({
-    getAllArticles: builder.mutation({
+    getAllArticles: builder.query({
       query: () => `api/articles`,
     }),
-    getArticle: builder.mutation({
+    getArticle: builder.query({
       query: (id) => `api/scores/articles/${id}`,
     }),
   }),
 });
 
-export const { useGetAllArticlesMutation, useGetArticleMutation } = articleApi;
+export const { useGetAllArticlesQuery, useGetArticleQuery } = articleApi;

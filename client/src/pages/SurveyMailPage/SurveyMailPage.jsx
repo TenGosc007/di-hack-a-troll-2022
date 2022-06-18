@@ -34,8 +34,6 @@ export const SurveyMailPage = () => {
   const handlEmail = ({ target: { value } }) => setEmail(value);
 
   const hadleClickBtn = async () => {
-    console.log(email, result, url, categoryId);
-
     try {
       const user = await sentEmail({
         email: email,
@@ -43,7 +41,6 @@ export const SurveyMailPage = () => {
         category: categoryId,
         result: result,
       });
-      console.log(!!user.data.metaData);
 
       dispatch(setEmailState(email));
       dispatch(setSuccess(!!user.data.metaData));
@@ -52,7 +49,6 @@ export const SurveyMailPage = () => {
       setErrorMsg('');
       if (user.error) setErrorMsg(user.error.data);
     } catch (err) {
-      console.log(err);
       setErrorMsg('login error');
     }
   };

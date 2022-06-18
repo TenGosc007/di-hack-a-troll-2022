@@ -1,149 +1,105 @@
-import { Layout, LinkCard, SearchBar } from 'components';
-import { paths } from 'constants/paths';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useGetAllArticlesMutation } from 'reduxStore/services/articles';
+import { ClipLoader } from 'react-spinners';
 
 import styles from './linksBase.module.scss';
+import { paths } from 'constants/paths';
+import { Layout, LinkCard, SearchBar } from 'components';
+import { useGetAllArticlesQuery } from 'reduxStore/services/articles';
 
 export const LinksBase = () => {
-  const [getlinks] = useGetAllArticlesMutation();
-  const [linkdata, setData] = useState([]);
-
-  const [sortType, setSortType] = useState();
+  const { data, isLoading } = useGetAllArticlesQuery();
+  const navigate = useNavigate();
+  const [linkdata, setLinkdata] = useState(data || []);
   const [query, setQuery] = useState('');
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    data && setLinkdata(data);
+  }, [data]);
 
-  let mainSearchRegex = new RegExp(query, 'i');
-
-  const getLinksData = useCallback(async () => {
-    const res = await getlinks();
-    if (res.data) {
-      setData(res.data);
+  useEffect(() => {
+    if (query.length > 1) {
+      const mainSearchRegex = new RegExp(query, 'i');
+      const newSearch = linkdata.filter(({ url }) => mainSearchRegex.test(url));
+      setLinkdata(newSearch);
+    } else {
+      data && setLinkdata(data);
     }
-  }, []);
-
-  useEffect(() => {
-    getLinksData();
-  }, [getLinksData]);
-
-  useEffect(() => {
-    const sortArray = (type) => {
-      const types = {
-        max: 'results',
-        min: 'results',
-      };
-      const sortProperty = types[type];
-      let sorted;
-      if (sortType === 'max')
-        sorted = [...linkdata].sort((a, b) => (b[sortProperty] - a[sortProperty]) / sortProperty.length);
-      else sorted = [...linkdata].sort((a, b) => (a[sortProperty] - b[sortProperty]) / sortProperty.length);
-      setData(sorted);
-    };
-    sortArray(sortType);
-  }, [sortType]);
-
-  useEffect(() => {
-    filterSearch();
   }, [query]);
+
+  const handleSelect = ({ target: { value } }) => {
+    const sortedData = [...data];
+
+    if (value > 0) sortedData.sort((a, b) => resultsScale(b.results) - resultsScale(a.results));
+    if (value < 0) sortedData.sort((a, b) => resultsScale(a.results) - resultsScale(b.results));
+
+    setLinkdata(sortedData);
+  };
 
   const navigateToStatsPage = () => {
     navigate(paths.statsPage);
   };
 
-  const filterSearch = () => {
-    if (query.length > 0) {
-      let newSearch = [...linkdata].filter((link) => mainSearchRegex.test(link.url));
-      setData(newSearch);
-    } else if (query.length === 0) {
-      setData([...linkdata]);
-      console.log(linkdata);
-    }
-  };
-
   const resultsScale = (project) => {
     const sum = project.reduce((a, b) => a + b, 0);
     const avg = sum / project.length || 0;
+    const result = (100 - avg) / 20;
 
-    if (avg >= 100) {
-      return 0.5;
-    }
-    if (avg >= 90) {
-      return 0.5;
-    }
-    if (avg >= 80) {
-      return 1;
-    }
-    if (avg >= 70) {
-      return 1.5;
-    }
-    if (avg >= 60) {
-      return 2;
-    }
-    if (avg >= 50) {
-      return 2.5;
-    }
-    if (avg >= 40) {
-      return 3;
-    }
-    if (avg >= 30) {
-      return 3.5;
-    }
-    if (avg >= 20) {
-      return 4;
-    }
-    if (avg >= 10) {
-      return 4.5;
-    }
-    if (avg >= 0) {
-      return 5;
-    }
+    return result > 0.5 ? result : 0.5;
   };
 
   const mapCategories = (categories) => {
-    let unique = [...new Set(categories.map((a) => a.name))];
+    const unique = [...new Set(categories.map((a) => a.name))];
 
-    return (
-      <div>
-        {unique.map((a) => (
-          <span>{a}, </span>
-        ))}
-      </div>
-    );
+    return <span>{unique.join(', ')} </span>;
   };
 
   return (
     <Layout>
-      <div className={styles.linksBase}>
+      <article className={styles.linksBase}>
         <h1>Baza podejrzanych artykułów:</h1>
-        <div className={styles.inputs}>
+        <section className={styles.inputs}>
           <SearchBar query={query} setQuery={setQuery} />
-          <select onChange={(e) => setSortType(e.target.value)} className={styles.sorting}>
+          <select onChange={handleSelect} className={styles.sorting}>
             <option value="" hidden>
               Sortuj wg...
             </option>
-            <option value="max">od najmniej zaufanych</option>
-            <option value="min">od najbardziej zaufanych</option>
+            <option value={0}>domyślnie</option>
+            <option value={-1}>od najmniej zaufanych</option>
+            <option value={1}>od najbardziej zaufanych</option>
           </select>
-        </div>
+        </section>
+
         <div className={styles.layout}>
           <p>Link</p>
           <p>Tagi</p>
           <p>Fejk</p>
         </div>
 
-        {linkdata.map((project) => (
-          <div key={project.id}>
-            <LinkCard
-              score={resultsScale(project.results)}
-              fakelink={project.url}
-              categories={mapCategories(project.categories)}
-              onClick={navigateToStatsPage}
-            />
-          </div>
-        ))}
-      </div>
+        <ClipLoader
+          css={{
+            position: 'absolute',
+            top: '35%',
+            left: '49%',
+            transform: 'translate(-50%, -50%)',
+          }}
+          color="#11557a"
+          size={40}
+          loading={isLoading}
+        />
+
+        {!isLoading &&
+          linkdata.map((project) => (
+            <div key={project._id}>
+              <LinkCard
+                score={resultsScale(project.results)}
+                fakelink={project.url}
+                categories={mapCategories(project.categories)}
+                onClick={navigateToStatsPage}
+              />
+            </div>
+          ))}
+      </article>
     </Layout>
   );
 };

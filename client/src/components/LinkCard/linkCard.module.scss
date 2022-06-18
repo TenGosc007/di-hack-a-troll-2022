@@ -1,31 +1,44 @@
 @import 'style/global';
 
 .linkBase {
+  min-width: 100%;
   display: grid;
-  grid-template-columns: auto 15vw 16rem;
-  //TODO zmienić wartość szerokości
-  width: 80%;
-  border: solid 0.2rem $c-silver;
-  border-radius: 0.5rem;
+  grid-template-columns: 1fr 15rem 15rem;
   justify-items: start;
   align-items: center;
+  border: solid 0.2rem $c-silver;
+  border-radius: 0.5rem;
   padding: 0.5rem 0.5rem 0.5rem 2rem;
   margin-top: 2rem;
   background: none;
+  text-align: left;
   cursor: pointer;
+
+  @include respond(tab-port) {
+    padding: 1.5rem 0rem 1rem 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
 
   .text {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    width: 35vw;
+    width: 100%;
+    padding-right: 4rem;
+
+    @include respond(tab-port) {
+      grid-column: 1 / span 3;
+    }
   }
 
   .textcat {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    width: 15vw;
+    width: 100%;
+    padding-right: 1rem;
+    color: $c-footer-bg;
   }
 
   &:hover,

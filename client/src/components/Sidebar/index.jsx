@@ -27,8 +27,10 @@ export const Sidebar = ({ className }) => {
           ))}
         </ul>
       </nav>
-      <img src={sideBarPng} />
-      <Footer />
+      <footer className={styles.footer}>
+        <img src={sideBarPng} />
+        <Footer />
+      </footer>
     </aside>
   );
 };

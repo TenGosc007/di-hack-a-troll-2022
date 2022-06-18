@@ -28,7 +28,7 @@ export const sentDataSlice = createSlice({
       state.real += 1;
     },
     calculateResults: (state) => {
-      state.result = (state.fake * 100) / (state.fake + state.real);
+      state.result = ((state.fake * 100) / (state.fake + state.real)).toFixed(2);
     },
     setPage: (state, { payload }) => {
       state.page = payload;
